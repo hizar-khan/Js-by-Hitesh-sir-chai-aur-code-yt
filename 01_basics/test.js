@@ -1,0 +1,1 @@
+console.log('hello hizar khan this is your fist code on github ide ! how you feeling ')
