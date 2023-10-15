@@ -25,13 +25,12 @@ let score2 = null
 console.log(score2)
 console.log(Number(score2))
 
-console.log("-----")
+console.log("-- undefined---")
 
 let undef = undefined
 console.log(undef)
-let a = console.log(Number(undef))
-console.log(a)
-console.log(typeof a)
+ console.log( typeof Number(undef))
+
 
 // boolean
 console.log("-----")
@@ -51,7 +50,7 @@ console.log(Number(bool0))
  conveting number+sting in string like "343abc" is difficlut to convet inot number
  it give us NaN but its type is numer (-\-) hahahah
  true convert into 1
- false inot 0
+ false into 0
 
  */
 
@@ -59,9 +58,13 @@ console.log(Number(bool0))
  console.log("--------checking boolean -------")
  let isOneTrue = 1
  console.log(Boolean(isOneTrue))
+ let str = 'lhel'
+ console.log(Boolean(str))
 
  let isZeroFalse = 0
  console.log(Boolean(isZeroFalse))
+ let empty = ''
+ console.log(Boolean(empty))
 
  console.log("--------checking String() -------")
 
