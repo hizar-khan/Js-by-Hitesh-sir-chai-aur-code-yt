@@ -4,36 +4,36 @@ let score = 43
 console.log(typeof score)
 console.log(typeof(score))
 
-// let make string and than convert inot number with Number()method
+// let make string and than convert into number with Number()method
 let num = "hello" //now this is string
-console.log(typeof num)// we have to convert it inot number
-let ValueInNum = Number(num) // it will convet srting into number
+console.log(typeof num)// we have to convert it into number
+let ValueInNum = Number(num) // it will convert srting into number
 console.log(typeof ValueInNum)
 
 let num2 = "23ab"// string value
 console.log(num2)
 console.log(Number(num2))// Number() this method change string into numeber
 
-console.log("-----")
+console.log("--Not A number NaN---")
 let notANumber = NaN
-console.log(notANumber)
+console.log(typeof notANumber)
 console.log( typeof notANumber) //  NaN is also a number type
 
-console.log("-----")
+console.log("-- null---")
 
 let score2 = null
-console.log(score2)
-console.log(Number(score2))
+console.log(typeof score2)
+console.log( typeof Number(score2))
 
 console.log("-- undefined---")
 
 let undef = undefined
-console.log(undef)
+console.log(typeof undef)
  console.log( typeof Number(undef))
 
 
 // boolean
-console.log("-----")
+console.log("---Boolean to Number conversion--")
 
 let bool1 = true
 console.log(bool1)
@@ -45,9 +45,9 @@ console.log(bool0)
 console.log(Number(bool0))
 
 /**
- conveting number in string like " 343" easily convert inot number wit 
+ converting number in string like " 343" easily convert into number wit 
  help of this method: Number() but
- conveting number+sting in string like "343abc" is difficlut to convet inot number
+ converting number+sting in string like "343abc" is difficlut to convert into number
  it give us NaN but its type is numer (-\-) hahahah
  true convert into 1
  false into 0
