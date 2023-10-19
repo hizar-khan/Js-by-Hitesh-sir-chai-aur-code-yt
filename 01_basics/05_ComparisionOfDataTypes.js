@@ -14,7 +14,7 @@ console.log(a == b)  // output 'true'
 console.log(a === b) //  output 'false'
 // coz here === it means that also check datatype of both value
 // while as a= '2' is string and b = 2 is number so both have different dataType
-//so output is false
+//so output is falseq
 // this called strick check
  
 console.log ('---------null comparison --------')
