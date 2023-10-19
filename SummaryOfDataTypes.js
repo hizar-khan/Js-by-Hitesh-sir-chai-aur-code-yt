@@ -25,4 +25,4 @@ functions()
 */
 const id = Symbol('123')
 const SndId = Symbol('123')
-console.log(id,SndId );
+console.log(id === SndId);
