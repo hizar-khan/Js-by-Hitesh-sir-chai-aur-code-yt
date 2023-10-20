@@ -23,11 +23,16 @@ console.log(myNewHobbies);
  
  user.email = "khan@gamil.com" // here iam changing in the key vale of object this change will happen in original one coz its use refernce the user
 user.email // new email 
+console.log(user.email); // email changed
+
+
+ //exmple 2
 
 let userOne = {
     name : "ali",
     class : "9th"
 }
+let userTwo = userOne
 
  console.log(userOne);
  console.log(userTwo);
@@ -35,6 +40,8 @@ let userOne = {
  // now if change in the userTwo which use the reference of userOne than the change will happen in both userONe and userTwo
  userTwo.class = "10th"
  //now if we check both 
- console.log(userOne.class.);
+ console.log(userOne.class);
  console.log(userTwo.class);
  
+ console.log(userOne);
+ console.log(userTwo);
