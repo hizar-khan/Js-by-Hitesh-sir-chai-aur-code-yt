@@ -1,5 +1,5 @@
-let myDate = new Date()
-let date = Date()
+// let myDate = new Date()
+// let date = Date()
 
 // console.log(typeof date);
 // console.log(typeof myDate);
