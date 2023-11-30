@@ -225,11 +225,15 @@ console.log(users[1]);
 
 // getting keys or values of an object
 
+
+/*** 
 const myObj1 = {
     name: "Kamran",
     email: "kam12@gmail.com",
     cell : +93125534422
 }
+
+*/
 
 
 /*** 
@@ -248,7 +252,55 @@ but someTime that values are not exists ,
  so to overcome this crash . either we will check that value manually or 
  use this method objName.hasOnwProperty("name of that property")
  */
-console.log(myObj1.hasOwnProperty("email"));
-console.log(myObj1.hasOwnProperty("hello"));
+// console.log(myObj1.hasOwnProperty("email"));
+// console.log(myObj1.hasOwnProperty("hello"));
 
 
+// de-structuring
+// we can both de-structure Array and objects
+// objects de-structure
+  /** 
+const course ={
+    courseName : "chai and code",
+    price : "On YouTube (free)",
+    courseInstructor : "hitesh Sir"
+
+}
+
+*/
+// console.log(course.courseInstructor); // it is common way to print key:value of object but what if we want to print same key:value more Than one time . so if we write the same code more than one time than it would be lenghty and not good practice ,
+// so to avoide this situation we will use  de-structure e.g const {keyName: here we can give new keyName} = objName
+// now log that keyName
+// const {courseName} = course
+// console.log(courseName);
+
+// const {courseName : NameOfCourse} = course
+// console.log(NameOfCourse);
+
+
+// so we ever we see {keyName} it mean here de-struturing of object is happeing
+
+//Api mean when we put our load/work on someOne else to do. (jab b ham apna kam kese douser ky sar par dalty hy it's called Api)
+//like when we go to resturant and look in the menu and say i want this dish , so now it not work to cook/make that dish for youself , the chef of that resturnat will make it for you , 
+// api are values that came from backend side in old days that values were used to come in xml form but now it come in Json form
+//json is like an object with no name e.g {} but here key will also put in "" e.g "keyName" : "valueName"
+//jsonSyntax 
+/*
+{
+keyName1 : "value1" ,
+keyName2 : "value2"
+}
+ */
+// {
+//     "userName" : " Ali Khan",
+//     "courseName" : " jS with hitesh ",
+//     "price" : " free"
+// }
+ // it's not necessay that api will always in objects
+// someTime we can get Api in array e.g in that array we have objects
+
+[
+{},
+{},
+{}
+]
