@@ -54,12 +54,14 @@ function addTwo (firstNo, secondNo){
    
     
 }
- const result = addTwo(2,3)
- console.log("result:",result); // it will give undifined bcoz we didn't return any thing to that function(addTwo)
-// so inthe above varible 'result' we save addTwo() but it return nothing that is why varible result = "undifined\"
+ const result = addTwo(2,3) // output: 5
  
+//  console.log("result:",result); // it will give undifined bcoz we didn't return any thing to that function(addTwo)
+// so inthe above varible 'result' we save addTwo() but it return nothing that is why varible result = "undifined\"
+*/ 
 
 
+/** 
 
 function retrnAdd (firstNo, secondNo){
     add = firstNo + secondNo
@@ -72,41 +74,49 @@ function retrnAdd (firstNo, secondNo){
 }
  const retutningValue = retrnAdd(2,3)
  console.log("retun:",retutningValue);
+ 
+*/
 
+/** 
 // 3rd way to print body of function
 function newFtn  (num1, num2){
  return num1 + num2
 }
-const newRetrn = newFtn(4,4)
-console.log(newFtn(5,5));
-console.log(newRetrn);
+const newRetrn = newFtn(4,4) // this will print nothing ,but what retrun the ftn will be in newFtn so we will keep/save it into new variable 'newRetrn'
+console.log(newRetrn); // now output : 8 coz num1+num2 = 8 retun to 'newFtn' and we keep that 8 into varible "newRetrn" and than log that variable in order to get output .
+console.log(newFtn(5,5));// here we directly log the ftn call so output : 10
 
-**/
+
+*/
 
 /// more on function
 
+/*
 
-/** 
 function loginUserMsg (userName){
+    console.log("hello");
     return `${userName}: just logIn`
+
 }
 
-// peinting functoin
+// printing functoin
 loginUserMsg("hizar khan")// print nothing coz in ftn body we are retuning to the function not printing inside the body of ftn
-console.log(loginUserMsg("Ali khan"));
+console.log(loginUserMsg("Ali khan")); // ali khan:just logIn
 const logIn = loginUserMsg("hizar khan")// here we are keeping what are the ftn retrun in a varibale 'logIn'
 console.log(logIn);
 // if we pass nothing in argument than undifined will print
 console.log(loginUserMsg());
-
+loginUserMsg()
 */
+
+
 /*
 
 function loggIng (newUser){
     if(newUser === undefined){
         console.log("Please! Enter User_Name");
-        return // this return me to not print after the above log (what belwow/after that return keyword)
-        console.log("heloaooa matata"); // this will not print
+        return // this return mean to not print after the above log (what belwow/after that return keyword)
+        console.log("heloaooa matata"); // this will not print due to the above "return" keyword
     }
     
 // else {console.log(`${newUser} :is newUser `); }
@@ -125,7 +135,7 @@ console.log("---------------");
 
 // when you want to never print undifined
 // than give by-defualt value to the parameter
-
+/** 
 function newUser (userName = "Hizar Khan"){
     if(!userName){
         console.log("Enter userName");
@@ -134,3 +144,4 @@ function newUser (userName = "Hizar Khan"){
 }
 console.log(newUser());
 console.log(newUser("sam"));
+*/
