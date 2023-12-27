@@ -66,7 +66,8 @@ console.log(result2);
 //...... how the above code will run/execute
 /*
 
-    i)first phase--first of all Global Execution/Global enviroment come/created and will allocate in "this" variable (these things will always happpen even the code is of two or more lines)
+    i)first phase--first of all Global Execution/Global enviroment come/created and will allocate in "this" variable 
+    (these things will always happpen even the code is of two or more lines)
     ii) second phase-- memoory PHase in this phase only the all variables are collected and keep in a memory
     in memory creation phase
     fist of all all variables names kept with values of undifined e.g. 
@@ -93,7 +94,8 @@ console.log(result2);
      we control reach at the variable result1 than intresting things happen coz we are again at addNum 
      this addNum will create its own execution phase so new exection context created/boc
      so here (in box) two things will created i) new variable enviroment ii) execution thread
-     each time a funciton execute than a box will created which is called new exectional context which contains i) new-variable-enviroment ii)execution thread
+     each time a funciton execute than a box will created which is called new exectional context which contains
+      i) new-variable-enviroment ii)execution thread
      due to this box the two things will happen again 1)memeory creation Phase and 2) Execution phase
      this will execute each time we call/execute function (addNum())
 
