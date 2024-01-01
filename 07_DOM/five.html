@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Aur Code</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+
+<script>
+    // Edit and remove element in Dom
+    function newElement (langName){
+    const newLi = document.createElement('li')
+ 
+    newLi.appendChild(document.createTextNode(langName)) 
+
+    document.querySelector('.language').appendChild(newLi)
+}
+
+ newElement('React js')
+ newElement('Node Js ')
+
+ 
+    // Edit element
+    const secondLang = document.querySelector('li:nth-child(2)')
+
+    // first method
+    // secondLang.innerHTML = "BlockChain"  // but don't use this 'innerHtml' due it's whole traversing tree
+    // here we are ceating new element and than replace it with nth-child(2)
+    /**
+    //  * second method
+    const replaceLi = document.createElement('li')
+      replaceLi.appendChild(document.createTextNode("LOleePop"))
+      secondLang.replaceWith(replaceLi)
+      */
+/**
+      //third method
+    const addLi = document.createElement('li')
+    addLi.textContent = "Moye Moye"
+    secondLang.replaceWith(addLi)
+
+    */
+
+    // forth method
+    // secondLang.outerHTML = "<li>TypeScript</li>"
+ 
+    // Remove element
+
+    secondLang.remove()
+
+
+</script>
+</html>
