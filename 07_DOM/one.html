@@ -34,9 +34,10 @@
 
 <!-- 
  DOM : mean document Object Model - used to munupulate the webpage with help of js
- doucment is used to get/modified anyThing(element) of webpage
+ doucment is used to get/modified/target anyThing(element) of webpage
  documet.getElementById/ByClass/ClassName are used to target specific element
- we can write/change text of webPage by useing .innerHTML e.g documet.getElementById("idName").innerHTML = "<h2> change Heading Name </h2>" 
+ we can write/change text of webPage by useing 
+ .innerHTML e.g documet.getElementById("idName").innerHTML = "<h2> change Heading Name </h2>" 
  
  document.getElementById('title')
 document.getElementById('title').innerHTML = "js with Hitesh Sir"
@@ -58,7 +59,8 @@ document.getElementById('title').getAttribute('class')
 'heading'
 
 we can set Attribute by using method setAttribute('id/class','idName/className')
-document.getElementById('title').setAttribute('class', 'test') // it will always override mean it will remove the old attribute name //
+document.getElementById('title').setAttribute('class', 'test') // it will always override mean it will remove the old attribute 
+name //
 // here it will remove/override the old className "heading" and with 'test' 
 //if you want to not remove the old className than do this .setAttribute('class', 'newClassName OldClassName')
 
@@ -119,14 +121,15 @@ NodeList(3) [li, li, li]
  
 it seems that we are getting array in above nodelist
 as we know that we can loop methods(foreach,map,reduce etc) on array ,so can we loop on the above nodelist ,let check
-most of the people think that the above is array but it is not the full array . always check the prototypes of it
+most of the people think that the above is array but it is not the full/actual array . always check the prototypes of it
 // here  in its prototype we have forEach so we can apply it on nodelist element
 liList
 NodeList(3) [li, li, li]
 liList.forEach(item => {
     item.style.backgroundColor = 'green'
 })
-// it will green all li bcz li is nodelist which similar as array(but not actual array) and each elemt nodelist coming inside the parameteer "item"
+// it will green all li bcz li is nodelist which similar as array(but not actual array) and 
+each elemt nodelist coming inside the parameteer "item"
 we can give multiple styli to   it
 liListt.forEach(item => {
     item.style.backgroundColor = 'yellow'
@@ -157,7 +160,7 @@ HTMLCollection [h1#title.heading, title: h1#title.heading]
 *********************************************************************
 
     //getElementByClassName()
-    it will give as HtmlCollection which is seem as nodeList but both are diffenet /let check its protoTypes
+    it will give as HtmlCollection which is look same as nodeList but both are diffenet /let check its protoTypes
     document.getElementsByClassName('list-item')
 
     we can style it by treatin it as array
@@ -213,7 +216,8 @@ get length
 : 
 Object
 
-*************************** we can do looping on HTMLcollection because it doest'nt have any looping mehtod(forecah etc) while nodeLIst have forEach
+*************************** we can do looping on HTMLcollection because it doest'nt have
+ any looping mehtod(forecah etc) while nodeLIst have forEach
 than how we will give style to HTMLCollection -- we will convert it 
 to convert it we use Array
 in array we have method .form () it will covert HtmlColleciton to An array
