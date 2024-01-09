@@ -10,9 +10,15 @@ accountPassword = "22222"  // no Error bcoz var also update/changed
 let novalue; // if variable have no value than it will be undefined
 
 /*so if both var and let change its value than why we are using both ????
-bcoz in early days js have no control on scopes or nor arware of it so if someone try to change something that use var so everywhere that change occur so the solve this problem js introduce let 
-so now don't use var use let (- _|_ -)
+bcoz in early days js have no control on scopes or no arware of it,  if someone try to change 
+something that use var as keyword than change occur everywhere in the file with
+ (var with same name e.g var a = 3, var a = 6 now new value of a is 6 )
+  to solve this problem js introduce let 
+ note.. neverEver use var, use let (- _|_ -)
 bcoz of issue in block scope and functional scope
+and also var add it's value to the window object(feature that provide by browser to js )
+due to which user Date expose 
+let didnt add it's value to window object
 
 
 */
