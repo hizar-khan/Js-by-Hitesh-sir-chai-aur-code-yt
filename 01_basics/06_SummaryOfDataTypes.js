@@ -17,21 +17,28 @@ let boolTrue = true
 let boolFalse = false
 
 iv_null
-let nullval = null
+let nullval = null // null is null not Zero 0, Zero is number
 
-v_  undefined 
+v_  undefined  // variable is decleared but not inilizte mean empty, hold nothing, no Value assign yet to a varibale just decleared
 let und;
 or let undf = undifiend 
 
-vi_ symbol (make values unique)
+vi_ symbol (make values unique) 
 let  id = symbol('23')
+
+const id1 = Symbol('121')
+const id2 = Symbol('121')
+ // even both the id1 and id2 have same value but the symbol will make it unique
+// let's check
+console.log(id1 === id2) // false
 
 vii_ BigInt (large values) 
 let bignum = 234325345345235n
 
 */
 
-// 2_ NOn- primitive or reference dataTypes
+// 2_ Non- primitive or reference dataTypes, call by reference, Arrays,objects,functions
+
 // 
 /*
 Arrays
