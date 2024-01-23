@@ -1,11 +1,11 @@
 const score = 400 // here the js will already know that its dataType is number
 
-console.log( score); // number
+console.log( score); // 400
 console.log(typeof score); // number
 let NumStr = score.toString() // converting number to String
 console.log( typeof NumStr);  // 'string'
 // now as number is converted to string so we can use all methods/properties of strings on NumStr
-console.log( NumStr.length)
+console.log( NumStr.length) // 3
 //console.log( NumStr.toFixed(3)) /// not working bcoz we have converted number to String and toFixed is the ftn of number 
 console.log( score.toFixed(3)) // 400.000
 
@@ -13,13 +13,13 @@ console.log( score.toFixed(3)) // 400.000
 
 // we can also declear number in 2nd way, which is called number object or non-primitive Number
 const score2 = new Number(330)
-console.log(score2);
+console.log(score2); // [Number : 330] { __proto__: {"} }
 console.log(typeof score2); // Object  
 // this give us differnt Mehtod to use on number as prototype
 
 // toString() , this method is used to convert number into String
 let numToStr = score2.toString()
-console.log( numToStr);
+console.log( numToStr); //'330'
 console.log(typeof numToStr); // string 
  // so now we can use mehtod of string on this
   console.log(numToStr.length); // output will be 3 coz toSrting mehtod  conveted 300 into string. now it acts as String
