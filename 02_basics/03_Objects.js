@@ -30,7 +30,8 @@
 // most of the time programmer use the above method to access objects values but this is not the good practice
 // we can use 2nd method to access values of obj
 // console.log(user["name"]);
-/// the reason to use  second method ,bcoz if we put the key inside " " than the objec.key will not work only object["key"] will work , so it is better to use the second method
+/// the reason to use  second method ,bcoz if we put the key inside " " than the objec.key will not 
+//work only object["key"] will work , so it is better to use the second method
 // console.log(user.email); // error coz we have declear key email inside ""
 // console.log(user["email"]); /// this will work so always use this method to acces key of object
 
@@ -91,48 +92,68 @@
 // user.greeting = function(){
 //     console.log("hello user ? we are Using ftns in obj");
 // }
-// console.log(user.greeting);
-// console.log(user.greeting());
 
-// funciton with some keys of same object
+// // console.log(user.greeting()); // 'hello user ? we are Using ftns in obj'
+// // console.log(user) // { name: 'hizzar', age: 20, greeting: ƒ () }
+// console.log(user.greeting); // f()
+
+// // funciton with some keys of same object
 //  user.greetingTwo = function (){
-//     console.log(`hello this is greeeting with some keys of obj. ,${this.name}`); // note that we are  using "this" coz we are referng  keys same   obj
+//     console.log(`hello this is greeeting with some keys of obj. ,${this.name}`); // note 
+// //that we are  using "this" coz we are referng  keys same   obj mean that here we are accessing the keys of user Obj so "this" refer
+// to the user keys valuse
 //  }
-//  console.log(user.greeting());
-//  console.log(user.greetingTwo());
+//  console.log(user.greeting()); // 'hello user ? we are Using ftns in obj'
+//  console.log(user.greetingTwo()); //'hello this is greeeting with some keys of obj. ,hizzar'
 
+// console.log(user)  // output below
+/* {
+  name: 'hizzar',
+  age: 20,
+  greeting: ƒ (),
+  greetingTwo: ƒ ()
+} */
 
  // final note that always use [] while accessing obj keys:vales not use much obj.keyName use obj["keyName"]
 
  // objects singleton , objects that crated  with the help of constructor
 
  // two ways are  used to declear objects
- /*1*/   //const myObj = new Object()   // this singleton object
+ /*1*/   //const myObj = new ObjectName()   // this singleton object
  /*2*/   //const myObj2 = {}            // this non-singleton object ,or object literal
 
-//  console.log(myObj);
-//  console.log(myObj2);
+//  console.log(myObj);  // {}
+//  console.log(myObj2); // {}
 
 
 // const myObj2 = {} // this is an empty object , non-singleton object || object literal
 
-// we are adding values in the above  empty object
+// // we are adding values in the above  empty object
 
 //  myObj2.id = "123abc"
 //  myObj2.name = "hizar"
 //  myObj2.isLoggedIn = false
  
-//  console.log(myObj2);
+//  console.log(myObj2); // { id: '123abc', name: 'hizar', isLoggedIn: false }
 
 //  const myObj = new Object(); // this also an empty object ,singleton object
 
-// we are adding values in the above  empty object
+// // we are adding values in the above  empty object
 
 //  myObj.name = "ali"
 //  myObj.location = "peshawar"
 //  myObj.male = true
- 
+// console.log(myObj); // { name: 'ali', location: 'peshawar', male: true }
+
 // console.table(myObj);
+// /*
+// | (index)  |   Values   |
+// -------------------------
+// |   name   |   'ali'    |
+// | location | 'peshawar' |
+// |   male   |    true    |
+
+// */
 
 
 
@@ -146,16 +167,20 @@ const newUser = {
         }
     }
 } 
-  
 */
-
-// console.log(newUser.fullname);   // accessing to the nested values of obj 
+   // accessing to the nested values of obj 
+ // console.log(newUser.fullname); // { newUserName: { firstName: 'ali', lastName: 'Nothing' }}  
+ 
 // console.log("---------");
-// console.log(newUser.fullname.newUserName);    // accessing to the nested values of obj 
-// console.log("---------");
-// console.log(newUser.fullname.newUserName.firstName);   // accessing to the nested values of obj 
 
-// we can use optional chnaing if there is no value exists  -- console.log(newUser?.fullname?.fistName)
+ // accessing to the nested values of obj 
+// console.log(newUser.fullname.newUserName); //{ firstName: 'ali', lastName: 'Nothing' } 
+
+// console.log("---------");
+// console.log(newUser.fullname.newUserName.firstName);  // 'ali'  // accessing to the nested values of obj 
+
+// we can use optional chnaing if there is no value exists  --
+// console.log(newUser?.fullname?.newUserName?.firstName) // 'ali'
 // we will discuss this later
 
 
@@ -180,24 +205,67 @@ const myObj3 = {
 }
 */
 
-// const myObj3 =  {myObj1 , myObj2} // not working 
-// console.log(myObj3); //
+// const combine =  {myObj1, myObj2, myObj3} // 
+// console.log(combine);  // output below
+/*
+{
+  myObj1: {
+    name: 'Kamran',
+    email: 'kam12@gmail.com',
+    cell: 93125534422
+  },
+  myObj2: {
+    degree: 'Bs IT',
+    semester: '6th',
+    address: 'Peshawar'
+  },
+  myObj3: {
+     isMale: true, 
+    dialble: false 
+  }
+}
+
+*/
 // 
 
-// const comBingnig = Object.assign ({},myObj1,myObj2,myObj3)
+const comBingnig = Object.assign ({},myObj1,myObj2,myObj3)
 // Object.assign(target,sources)
 // the empty {} in the above is used that it is target and the remingng are sources.
-// it is optinal to use but we use it coz we want to return all values in new target/object if we not use target {} than all values will return to the first object which target 
+// it is optinal to use but we use it coz we want to return all values in new target/object if 
+//we not use target {} than all values will return to the first object which target 
 
 
-// console.log(comBingnig);
+console.log(comBingnig);  // output below
+/*
+{
+  name: 'Kamran',
+  email: 'kam12@gmail.com',
+  cell: 93125534422,
+  degree: 'Bs IT',
+  semester: '6th',
+  address: 'Peshawar',
+  isMale: true,
+  dialble: false
+}
+*/
 
 // but but but  the above (Object.assign) is not used mostly . we will use spread {...obj1,/...obj2,/..objN}
-// const combineSpred = {...myObj1, ...myObj2, ... myObj3} // we will use this method often
-// console.log(combineSpred);
+const combineSpred = {...myObj1, ...myObj2, ... myObj3} // we will use this method often
+console.log(combineSpred); // output below
+/*
+{
+  name: 'Kamran',
+  email: 'kam12@gmail.com',
+  cell: 93125534422,
+  degree: 'Bs IT',
+  semester: '6th',
+  address: 'Peshawar',
+  isMale: true,
+  dialble: false
+}
 
 
-// we values are coming from dataBase
+//  values are coming from dataBase
 // the valuse that are coming from the database will be in form of array of object [{} ,{},{}]
 //e.g
 
@@ -218,29 +286,34 @@ const users = [
         email: "lkm3@gmail.com"
     }
 ]
-console.log(users[1]);
+console.log(users[1]);  // { id: 2, email: 'mk3@gmail.com' }
 */
 
 
 
-// getting keys or values of an object
+// getting keys or values of an  object
 
 
 /*** 
-const myObj1 = {
-    name: "Kamran",
-    email: "kam12@gmail.com",
-    cell : +93125534422
-}
-
+console.log(Object.keys(myObj1)); // [ 'name', 'email', 'cell' ] // getting keys
+console.log(Object.values(myObj1)); //// [ 'Kamran', 'kam12@gmail.com', 93125534422 ] getting valuse
+console.log(Object.entries(myObj1)); // entries put each key:value pair in array -- rarely used 
+/*ouput
+[
+  [ 'name', 'Kamran' ],
+  [ 'email', 'kam12@gmail.com' ],
+  [ 'cell', 93125534422 ]
+]
 */
+console.table(Object.entries(myObj1)); // entries put each key:value pair in array -- rarely used
+/*output
+| (index) |    0    |         1         |
+-----------------------------------------
+|    0    | 'name'  |     'Kamran'      |
+|    1    | 'email' | 'kam12@gmail.com' |
+|    2    | 'cell'  |    93125534422    |
 
-
-/*** 
-console.log(Object.keys(myObj1)); // getting keys
-console.log(Object.values(myObj1)); // getting valuse
-console.log(Object.entries(myObj1)); // entries put each key:value pair in array -- rarely used
-*/
+*/ 
 
 // Note!!! that these keys and valuse will be return in arrays so we can use differnt type mthod on them like loops etc
 
@@ -252,8 +325,8 @@ but someTime that values are not exists ,
  so to overcome this crash . either we will check that value manually or 
  use this method objName.hasOnwProperty("name of that property")
  */
-// console.log(myObj1.hasOwnProperty("email"));
-// console.log(myObj1.hasOwnProperty("hello"));
+// console.log(myObj1.hasOwnProperty("email"));  // true
+// console.log(myObj1.hasOwnProperty("hello"));  // false
 
 
 // de-structuring
@@ -268,7 +341,10 @@ const course ={
 }
 
 */
-// console.log(course.courseInstructor); // it is common way to print key:value of object but what if we want to print same key:value more Than one time . so if we write the same code more than one time than it would be lenghty and not good practice ,
+   // console.log(course.courseInstructor); // 'hitesh Sir',
+ // it is common way to print key:value of object but what if we want 
+//to print same key:value more Than one time . so if we write the same code more than one time than it would 
+//be lenghty and not good practice ,
 // so to avoide this situation we will use  de-structure e.g const {keyName: here we can give new keyName} = objName
 // now log that keyName
 // const {courseName} = course
@@ -278,23 +354,24 @@ const course ={
 // console.log(NameOfCourse);
 
 
-// so we ever we see {keyName} it mean here de-struturing of object is happeing
+// so whenever we see {keyName} it mean here de-struturing of object is happeing
 
 //Api mean when we put our load/work on someOne else to do. (jab b ham apna kam kese douser ky sar par dalty hy it's called Api)
-//like when we go to resturant and look in the menu and say i want this dish , so now it not work to cook/make that dish for youself , the chef of that resturnat will make it for you , 
+//like when we go to resturant and look in the menu and say i want this dish , so now it not work to cook/make that 
+//dish for youself , the chef of that resturnat will make it for you , 
 // api are values that came from backend side in old days that values were used to come in xml form but now it come in Json form
 //json is like an object with no name e.g {} but here key will also put in "" e.g "keyName" : "valueName"
 //jsonSyntax 
 /*
 {
-keyName1 : "value1" ,
-keyName2 : "value2"
+"keyName1" : "value1" ,
+"keyName2" : "value2"
 }
  */
 // {
-//     "userName" : " Ali Khan",
+//     "userName"   : " Ali Khan",
 //     "courseName" : " jS with hitesh ",
-//     "price" : " free"
+//     "price"      : "free"
 // }
  // it's not necessay that api will always in objects
 // someTime we can get Api in array e.g in that array we have objects
