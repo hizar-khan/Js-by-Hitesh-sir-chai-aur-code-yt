@@ -381,3 +381,26 @@ const course ={
 {},
 {}
 ]
+
+
+// Using of "This" in obj
+let details = {
+  name : "Hizar Afridi",
+  class : "9th",
+  getName : function() {
+    return this.name // due to 'this' keyowrd we will get  value of key 'name' of the details obj(the obj that we are in )
+  },
+  getDetails : function (){
+   
+    return this // "this" will send the the whole object (we are in) in ftn (getDetails)
+  }
+}
+console.log(details.getDetails())  //output below
+/* {
+  name: 'Hizar Afridi',
+  class: '9th',
+  getName: ƒ getName(),
+  getDetails: ƒ getDetails()
+} */
+
+console.log(details.getName()) // 'Hizar Afridi'
