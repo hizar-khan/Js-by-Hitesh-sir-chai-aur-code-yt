@@ -6,34 +6,51 @@
 // let we have an obj
 // we are registring a user on website
 const user = {
-    userName : "Hizar Khan",
-    id   : 9,
+    userName   : "Hizar Khan",
+    id         : 9,
     welcomeMsg : function (){
        
-        console.log(`${this.userName} , welcome to the Website`); // here we want  that  any user came in to the website,
-        // the "wlcomeftnmsg" will greet him, 
-           /// "this " is used bcoz we are referring the current context , that is inside the obj {}
-           console.log(this);
+        console.log(`${this.userName} , welcome to the Website`); // 'Hizar Khan , welcome to the Website'
+        // here we want  that  any user came in to the website, the "wlcomeftnmsg" will greet him, 
+           // "this " is used bcoz we are referring the current context , that is inside the obj {}
+           console.log(this); // "this" refer the obj "user" so the whole obj will execte
     }
 
 }
 
-// user.welcomeMsg()
+user.welcomeMsg()
+/*output
+//'Hizar Khan , welcome to the Website'
+
+{
+  userName: 'Hizar Khan',
+  id: 9,
+  welcomeMsg: ƒ welcomeMsg()
+}
+*/
 //what if someOne change userName e.g
 
 // user.userName = "Ali khan"
 // as here we are changing the context(userName) ,
 // user.welcomeMsg() // now output is " Ali khan , welcome to the website"
 
+/* now Output
+//'Ali khan , welcome to the Website'
+{
+  userName: 'Ali khan',
+  id: 9,
+  welcomeMsg: ƒ welcomeMsg()
+}
+
+*/
 
 // in the above obj we know the current context , which is anyThing inside the obj but
 // what if we use "this" outside the obj, than what will be current context for "this"
 // user.welcomeMsg()
-console.log(this);// output will be :{} , Bcozz as "this" keyword refer
+// console.log(this);// output will be empty {} , Bcozz as "this" keyword refer
 // current context and we are using "this" as global scope and we have nothing in global  
 /**that is why output will be :{} , aslo  here we are working in node enviroment , 
- it refer to the global current context and we have nothing in globa l*/ 
-
+ it refer to the global current context and we have nothing in global*/ 
 /**  but but but if we console.log(this) in broswer than we will see output: Window {} ,
 this bcoz in broser we have Window object is a Global object, so window obj is current context for "this" 
 */
@@ -42,13 +59,35 @@ this bcoz in broser we have Window object is a Global object, so window obj is c
 /** so the engine of js was/is inside the browser ,that is why whenever we c.log(this) than we will 
 get(output) Window obj which is Global object ,but now   js Engines are  stands alone e.g node, deno etc */
 
-
-/*
+/** 
 function chai (){
     let username = "hizar khan"
     console.log(this);
+}  */
+//   chai()
+ // we will get many things  due to "this" coz funcion have many pr-defined  things ..note here we are in node enviroment
+ /*output
+ <ref *1> Object [global] {        
+  global: [Circular *1],
+  clearImmediate: [Function: clearImmediate],
+  setImmediate: [Function: setImmediate] {
+    [Symbol(nodejs.util.promisify.custom)]: [Getter]
+  },
+  clearInterval: [Function: clearInterval],
+  clearTimeout: [Function: clearTimeout],
+  setInterval: [Function: setInterval],
+  setTimeout: [Function: setTimeout] {
+    [Symbol(nodejs.util.promisify.custom)]: [Getter]
+  },
+  queueMicrotask: [Function: queueMicrotask],
+  structuredClone: [Getter/Setter],
+  atob: [Getter/Setter],
+  btoa: [Getter/Setter],
+  performance: [Getter/Setter],   
+  fetch: [AsyncFunction: fetch],  
+  crypto: [Getter]
 }
- chai() // we will get many things  due to "this" coz funcion have many pr-defined  things 
+
  */
 
  /* 
@@ -59,30 +98,31 @@ function code ()
 }
 code() // this will give "undifiend " coz we get it  only in object
 */
-/* 
+
 // Arrow function
 // syntx: const ftnName = () =>{} 
-const arrowFtn = ()=>{
+const arrowFtn = () => {
     console.log("i am Arrow Function");
 }
-// arrowFtn()
+// arrowFtn()  // i am Arrow Function
 //   can   "this" will work in Arrow funciton
 //lets check it
-const thisInArrowFtn = ()=>{
+const thisInArrowFtn = () => {
     let username = "Hizar khan"
     console.log(this); // output: {} 
 } 
-thisInArrowFtn()
+// thisInArrowFtn() // {}
 
-const thisInArrow = ()=>{
+const thisInArrow = () => {
     let username = "Hizar khan"
+    console.log(this); // {}
     console.log(this.username); // output: undifined
 } 
-thisInArrow()
+// thisInArrow() //
 // so most of people will tell you that "this " can work in simple function but not in Arrow funcion but
 // this is not true as we checked above
 
-*/
+
 
 //more on Arrow ftn
 // syntx of Arrow ftn
@@ -93,7 +133,7 @@ thisInArrow()
    we can hold (give name) arrow  function in a Variable like ftn expression
    const arrowFtn = () => {}
   
- const addNumbers = (num1, num2) => {
+  const addNumbers = (num1, num2) => {
     console.log(num1 + num2); // 10
     console.log(- num1  - num2); // -10
 
@@ -101,7 +141,15 @@ thisInArrow()
     console.log(`${num1} + ${num2}`);// 5 + 5
  }
  addNumbers(5,5)
- */ 
+/*outputs
+ 10
+-10
+
+'10'
+'5 + 5'
+*/
+ 
+ 
 
 
  // implicit return ,in this we can't write {} and return keyword ,
@@ -113,39 +161,40 @@ const add =(num1, num2) => {
     return num1 + num2
 }
 // add(100,100) // 200
-console.log(add(2,2)); // 4 and 4
+// console.log(add(2,2)); // 4 and 4
 
 // second way to write Arrow function (implicit return) // here no need of {} and "return" keyword
  const ftnName = (num1, num2) => num1 + num2 // no need of {}and return
 ftnName(2,4) //nothing will print coz implist return to the ftn name so we will c.dlog it
-console.log(ftnName(2,4));
+// console.log(ftnName(2,4)); // 6
 
 
   // we can write () insted of {}
   
  const addNum = (num1, num2) => (num1 + num2)
- addNum(1,9) // nothing will print coz ftn returning , so we will log it
- console.log(addNum(1,9));
+//  addNum(1,9) // nothing will print coz ftn returning , so we will log it
+//  console.log(addNum(1,9)); // 10
 
  // we can directly c.log()  insted of return{} ,(), 
 const addTwo = (num1, num2) => console.log(num1 + num2); // 
 
-addTwo(4,5)
+// addTwo(4,5) // 9
 
 // if you are using implicit than use implisti with () coz if you want to return an object than if we use object without () than
 // it will give undifined but if we use put obj in () than it will return
 const rtnObj = ()=> {name:"retruning Object"} // it will give undifined
-console.log(rtnObj());//undifined
+// console.log(rtnObj());//undifined
 
-const objReturning = ()=> ({name:"retruning Object"} )// it will give return object so if you want to use implicit return than use it with parenthesis ()
-console.log(objReturning());
+const objReturning = ()=> ({name:"retruning Object"} )
+// it will give return object so if you want to use implicit return than use it with parenthesis ()
+// console.log(objReturning());  // { name: 'retruning Object' } 
 
 // array with implicit return
 // without () and with ()
 
 const arrayRetrn = () => [200,300,400]
-console.log(arrayRetrn());
+console.log(arrayRetrn()); // [ 200, 300, 400 ]
 
 const retrnArray = () => ([200,3309,4499])
-console.log(retrnArray());
+console.log(retrnArray()); // [ 200, 3309, 4499 ]
 // both will retrun  array 

@@ -1,13 +1,16 @@
 // global and local scope 
-// every time you/we see { } ,it maybe of functoin or if/else curly brackets ,than think that  it's scope,,,,, expcet the object curly brackets 
+// every time you/we see { } ,it maybe of functoin or if/else curly brackets ,than think that  it's scope,,,,, 
+//expcet the object curly brackets 
 // function {} or if/else {} are scopes  // what is indside of that {}are scopes of that funtion/if/else
 // what inside that curly brackets {} will work/access inside that brackets
 // it will be not avaliable/accesable to the outside of that {}
-// but what outside of that curly bracktes are global scope and we can access global scope indside the curly brackets {} and aslo outside the brackets
-// inshort local scope are block scope that only accessible / avalible inside that curly bracket {} while global scope are accessible/avalible everyWhere .we can acces it inside and outside the brackets
-//remeber global scope always wiritten outside the brackets  while local scope will always written inside the curly brackets(of function/if/else not of objects brakkets)
+// but what outside of that curly bracktes are global scope and we can access global scope indside
+// the curly brackets {} and aslo outside the brackets
+// inshort local scope are block scope that only accessible / avalible inside that curly bracket {} while
+// global scope are accessible/avalible everyWhere .we can acces it inside and outside the brackets
+//remeber global scope always wiritten outside the brackets  while local scope will always written inside 
+//the curly brackets(of function/if/else not of objects brakkets)
  /**
-
 if(true)
 {
     let a = 20 // local scope
@@ -17,24 +20,26 @@ if(true)
 // console.log(a); // this will give error coz here we are using 'let' which is  is local scope dependent
 
 // console.log(b); // this will also give an error coz here we are using  "const" which also scope dependent
-console.log(c); // this will print without making any error coz 'var' is global scope // that it is not recomended to use
+console.log(c); // this will print without making any error coz 'var' is global scope // that is why  it's not recomended to use
  */
 /** 
-// what if  we have two variable of same name one is local and other is global scope . than if we c.log it inside the brackets as well as outside the brackets than which one will print 
+// what if  we have two variable of same name one is local and other is global scope . 
+//than if we c.log it inside the brackets as well as outside the brackets than which one will print 
 //e.g 
 let xyz = "i am Golbal socpe variable"
 if(true){
-    let xyz = "I am Local socpe variable"
-    console.log(xyz);
+    let xyz = "I am Local socpe variable" // if we remove this varibles the the c.log insde { } will get access
+   //  the outside xyz varible due to it's Globla scope 
+    console.log(xyz); // 'I am Local socpe variable' but this can access the outsider (global scope) varibles 
 }
-console.log(xyz);
+console.log(xyz); // 'i am Golbal socpe variable' // this c.log will  print the outsider xyz not access inseder xyz {}
 */
 /** 
 
 // accessing global scope variable from brackets
 let val = " I am Global scope Varaible"
 if(true){
-    console.log(val);
+    console.log(val); // " I am Global scope Varaible"
 }
 */
 
@@ -44,29 +49,32 @@ if(true){
 
 let global = "Global vaiable accessed"
 if(true){
-    console.log(global,"::Locally");
+    console.log(global,"::Locally"); // 'Global vaiable accessed' '::Locally'
 }
-console.log(global, ":globaly");
+console.log(global, ":globaly"); // 'Global vaiable accessed' ':globaly'
 
 */
 
 //Nested scope
 // suppose we have ftn which have other ftn(nested ftn) 
 
-function mainFtn (){
-    const userName = "Hizar Khna"
-    
+function mainFtn(){
+    const userName = "Hizar khan"
+  console.log(userName)
+  console.log(website); // give error coz we can't access child varibles but child can access the parent vaibales
     function nstedFtn(){
         const website = "YouTube"
-        console.log(userName); // output :hizar khan , coz nested ftn (lcoal ) can get access to the parent ftn (global) variable 
+        console.log(website);
+        console.log(userName);
+         // output :hizar khan , coz nested ftn (lcoal ) can get access to the parent ftn (global) variable 
         
     }
-    //console.log(website); // it will give error coz parent function (global) can access to the nested ftn (child/local) variable
-    nstedFtn() // 
+// console.log(website); // it will give error coz parent function (global) can access to the nested ftn (child/local) variable
+    nstedFtn() // 'YouTube' 'Hizar khan'
 }
 
-
 mainFtn()
+
 
 // nested function can get access of the parent varibles but
 // parent function can't access variables of nested (child) function
@@ -81,7 +89,7 @@ if(true){
     const name = "iam parent variable"
     if(true){
         const user = "iam child variable"
-        console.log(name + ' --AND-- '+ user);// it will print
+        console.log(name + ' --AND-- '+ user);// it will print  // 'iam parent variable --AND-- iam child variable'
     }
     // console.log(user); // give error coz parent can access to child varibale
   
@@ -98,11 +106,11 @@ if(true){
 
 // ********** Simple/Basic Function
 function addOne (num){
-    return num +1
+    return num + 1
 
 }
 addOne(5) // only return not print
-console.log(addOne(5));
+console.log(addOne(5)); // 6
 
 // but someTime we write above ftn as;
 
@@ -114,19 +122,18 @@ const addTwo = function(num){
     return num + 2
 }
 addTwo(5)
-console.log(addTwo(5));
+console.log(addTwo(5)); // 7
 // we have some other type of ftn like arrow ftn iif etc
-
-
 */
-
 
 // basic discussion on hoisting , we will cover it later in details
 // let we have funtion
-// hoisting mean accessing a function before it's decleartion but remember that we can't hoist any type of funcion like if we hoist on funcion expression than it will give error
+// hoisting mean accessing a function before it's decleartion but remember that we can't
+// hoist any type of funcion like if we hoist on funcion expression than it will give error
 
 
- console.log(hoisting(4)); // this will give no error  due to hoisting but what if we declear function as function expression than it will give us error
+ console.log(hoisting(4)); // 5 this will give no error  due to hoisting but what if
+ // we declear function as function expression than it will give us error
 
 function hoisting(num){
     return num + 1
