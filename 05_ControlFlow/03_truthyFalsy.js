@@ -3,8 +3,8 @@
 
 
  const userEmail = "@hizarkhan"
- if(userEmail){
-    console.log("Got Eamil,  Access");
+ if(userEmail){ // true bcoz there is values insdie the strings ""
+    console.log("Got Eamil,  Access"); // so this log will be executed 
  }
  else
  {
@@ -16,28 +16,32 @@
  // but if we make userEmail value empty userEamil = " " than it will false ,
  //but if we assing empty aray to a varable than it will be also true
  const emptyArry = [ ]
- if(emptyArry) console.log("true");
+ if(emptyArry) console.log("true"); // true bcoz empty array is also a truthy value
  else console.log("false ");
 
  const emptyString = ""
- if(emptyString)console.log("true");
- else console.log("empty string is falsy value");
+ if(emptyString)console.log("true"); // false bxoz empty stirngs is falsy valuse
+ else console.log("empty string is falsy value"); // so else will be executed
  // so in the A above exmple we did'nt compare the the condition but still some condition are true and some are fasle
  // in js there are some values which are falsyy and truty
 
  /*  falsy Values
- ---------- false , 0 , -0 , bigInt 0n, "" empty String, null, Undifined, NaN -- these all are falsy values
+ ---------- false , 0 , -0 ,0n in bigInt is falsy value , "" empty String, null, Undifined, NaN -- these all are falsy values
  
  truthy values
  -------some truthy values
  ------- true , [], {},  All Strings execpt empty string but empty sting with sapce will be truth value "  ", "0", "fasle"
  anyThing in string even a space is truthy values but  empty String is fasly""
  funciton(){} empty funciton is also truthy value
- false == 0  --> true
- false == '' --> true
- 0 == ''     --> true
- 
-  
+ ++++++++++
+false == 0  --> true
+false == '' --> true
+    0 == '' --> true
+++++++++++++++++++++++++
+ false === 0   // false
+false === '' // false
+    0 === ''// false
+  +++++++++++++++++
 to chek empty array
 let emptyArr = []
 if(emptyArr.length === 0){
@@ -47,7 +51,7 @@ if(emptyArr.length === 0){
  */
 
 let emptyObj = {}
-if(Object.keys(emptyObj).length === 0){
+if(Object.keys(emptyObj).length === 0){ // as the .lenght is the prorpety of array than why we use here bcz Object.keys(ObjName) return the keys in a array so we can use all propeties on these keys as the are retured in array
     console.log("empty obj is truthy value");
 }
 
@@ -56,46 +60,30 @@ if(Object.keys(emptyObj).length === 0){
 // || Or operator  if only one value is true than true even the remmings values are false
 
 // ---------- Nullish Coalescing Operator (??) used on Null and Undifined
+let val1;
+val1 = 5 ?? 10 ; // what value will be assign to the variable "val1"
 
+console.log(val1); // 5
+  // as we see in the above example that the first value is assign to the "val1" than why we are using ?? this
+  // it is bcz someTime when we call from dataBase or using firebase or appwirte, we did'nt get response directly, we will get two values
+  // and there is a chances that we get null response or undefined or not receive any response
+  //than our whole structure may be distrubed, so for this situation Nullish coalescing Operator (??) is created to treat null or undefined
+// e.g
+ let val2;
+ val2 = null ?? 10;
+ console.log(val2); // null will ignore and 10 will stored and execute
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ let val3;
+ val3 = undefined ?? 10;
+ console.log(val3); // 10
 
 
 //  ternary Opeartor
- //         condition ? ture : false
-  2== 2 ? console.log("true") : console.log("fasle")
-
-
-
- 
+ //         condition ? ture : false;
+  // condition ?   if ture run this part : if false run this part
+  2 == 2 ? console.log("true") : console.log("fasle")
 
  /* 
-
 User:
  list of turthy and falsy in js
 
