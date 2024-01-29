@@ -2,7 +2,7 @@
 it is necessay to not Execute All code ,code should be execute on Conditional base e.g
  if we login in than only one block of code run 
  While when we logout than only other code block run  mean
-  each Exact code run  for specific activity not the whole program/code 
+  each  code run  for specific activity not the whole program/code 
   should run for single activity
  this is called Control or Logic Flow
  
@@ -56,7 +56,8 @@ variable "power is local scope{} here we want to access it outSide the {}
   const balance = 1000
   if (balance > 5000) console.log("I'm Broke");
   else console.log("U are Irani-Millionor");
-  // in the  above code we did't use {} it but still code work fine but we did't use mutli line ,if we want to use multi line inthis way than we use comma ','
+  // in the  above code we did't use {} it but still code work fine but we did't use mutli line ,
+  if we want to use multi line inthis way than we use comma ','
   if (balance < 5000) console.log("your are  Broke") ,
    console.log("But don't worry your are still Irani-Millionr"),
    console.log("-------------"),
@@ -87,6 +88,7 @@ if(balance == 6000){
 else if(balance){
     
     console.log("Congrate!! U R Still -Iranii-Millionar    ");
+    console.log(balance)
 }
 else if(balance > 200){
     
@@ -125,7 +127,8 @@ const LoggedInGoogle = false
 const LoggedInEmail = true
 
 if(LoggedInGoogle || LoggedInEmail){
-    console.log("LoggedIn: Success");
+    console.log("LoggedInGoogle: Denied");
+    console.log("LoggedInEmail: successed");
     console.log("debitCard: Valid");
     console.log("Your are Allowed To Purchase");
 }
@@ -138,3 +141,10 @@ else{
 
 
 
+if(2 !== "2"){ // true , its mean that 2 is not same type of "2"
+    console.log(' 2 is number and "2" is stirng so 2 is not the same type')
+  }
+  if(2 !== 2){ // false bcoz 2 and 2 both are numbers
+    console.log("true")
+  }
+  else 'false cause 2 is number and also 2 is number so '

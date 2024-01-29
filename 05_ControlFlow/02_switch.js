@@ -17,7 +17,8 @@ case value-n:
     default:
         break;
 }
-
+// whenever the case match than the bewlow of that case all cases will be executed if we did'nt use break execpt defautl; so 
+// break is used to stop the program after the value match 
 
 */
 const month = 4
@@ -33,7 +34,7 @@ switch (month) {
         console.log("march");
         break;
     case 4:
-        console.log("April");
+        console.log("April"); // this case will execute
         break;
     case 5:
         console.log("May");
