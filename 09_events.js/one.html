@@ -1,11 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>htnml Events </title>
+    </head>
+    <body style="background-color: #414141; color: aliceblue;">
+        <h2>Amazing image</h2>
+        <div>
+            <ul id="images">
+                <li><img width="200px" id="photoshop"
+                        src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                        alt="photoshop"></li>
+                <li><img width="200px" id="japan"
+                        src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                        alt></li>
+                <li><img width="200px" id="river"
+                        src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                        alt></li>
+                <li><img width="200px" id="owl"
+                        src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                        alt>></li> <!---onclick="alert('Owl')" write this iside the element as attribute --> 
+                <li><img width="200px" id="prayer"
+                        src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                        alt></li>
+                <li><a style="color: aliceblue;" href="https://google.com"
+                        id="google">Google</a></li>
+            </ul>
+            
+        </div>
+    </body>
+    <script>
+        // all the events in js are run sequentially(same execptions are exists, we will take about them)
+        //we can ignore these sequencness(as js is sequencitoal language), e.g in asynchornize code same we do in events
+        // these events are based on some activites e.g when we are moveing mouse or 
+        //clicking with mouse,mouseIN, mouseOut,mouseOver, pressing keybord buttons, dragAndDrop, these are events etc
+        //let see what approach we will be using in each events
+        // onclick() // write in the html elements as attribut e.g
+        // in the imge with id="owl"  onclick="alert('Owl')" // now if we click on the 
+        // img 'owl' inside the borwser than the alret window will popUp with msg "owl", due to onclick() event.
+        // but this approach is not good when our appliction/website scale than this will make problems
+        // but in react the code is scalable that is why we use onclick() but here make problems
+        // 2nd approach 
+        /*     
+        document.getElementById('owl').onclick = function(){
+            alert("owl") 
+              // this approach is good but not very good/prefect may onclick() cause some problems and
+             // provide less features,  as we are not getting enough infromations
+            // we have to use EventListener bcoz it not just give us onclick() but also
+           // give propagations ability. it gives us more features 
+        }    */
+
+        // best approach is using EventsListiner ( give performs/listen differnts evnets e.g mouseEvents, keyBoardEvetns even dragAndDrop etc)
+        // syntax first birng element on which event is to perform with dot(.) and addEvnetlistenr('EventName'function(){},true/false here false will be bydefalut)
+        // why the true and false is write at the third parameter bocz without it the events can't complete(not clear yet, we will study more about it) and here false is by defalut that is why we not write it normally
+        // getingElment.addEventListener('eventName',function(){},false/true //bydefault false)
+        /*
+        document.getElementById('owl').addEventListener('click',function(e){
+
+            alert("Owl")
+        },false)  */  
+        // we have also other approach e.g attachEvent this was used in old days as we were using in internet explorere
+        // also we were using in the jQuery-- on
+    //++++++++++++++++++++++++++++=
+/*
+        document.getElementById('owl').addEventListener('click', function(e){
+            console.log(e) 
+            // this "e" is event object, it is very important, study about it
+            // it will have many things , many events,mostly events are browser evnets and enviroments events e.g where mouse clicked what was the positon of mouse etc
+            //what is the view, when mouse clicked what were the height and width of window, on what time it was clicke etc\
+            // in iterview may ask make a application and tell us the the time of clcik 
+            // creat a appliction and when the mouse click on div than make a circle
+        },false) */
+        // basic events to study 
+        // type, timestamp, defautprevented(change the defaut behaviour of something e.g as form will submit on clicking submit but we can stop this)
+        // target, toElement, srcElement, currentTarget,
+        // clientX. clientY, screenX, screenY,
+        // altkey, ctrkey (is the keys pressed or not), keyCode(projects keyBoard speed)
+
+        //event propagation
+        // false and true parameter
+      /*  document.getElementById('owl').addEventListener('click', function(e){
+            console.log(e)
+        },false) 
+        document.getElementById('owl').addEventListener('click', function(e){
+            console.log(e)
+        },true)    */
+        // as we see no difference in the execution of the above code with parameter "false" and "true"
+        // than what is event propagation
+        //event propagation have two context 1) event bubbling 2)event capturing
+        // false for event bubbling and true for event capturing 
+        // as false is bydefault mean event bubbling is using by-default
+        // but we can use event capturing
+
+    /*    document.getElementById('images').addEventListener('click', function(e){
+            console.log("click inside the ul")
+        },false)  // when we click inside the anyImage/ul in browser than "click insde the ul" will be execute in the console
+
+        document.getElementById('owl').addEventListener('click', function(e){
+            console.log("owl img clicked") 
+        },false) */ 
+        // but here if we click on the img with the id "owl" than the "owl img clciked" will execute but as we have event on the ul and the owl img is insede the ul than both ul and owl console will execute
+        // as false is doing bubbling(as bubble blow/move from bottom to up ) so first the owl will execute than clcicked will execute
+        
+        // let check "true" parameter
+  /*      document.getElementById('images').addEventListener('click', function(e){
+            console.log("click inside the ul")
+        },true)  
+        document.getElementById('owl').addEventListener('click', function(e){
+            console.log("owl img clicked") 
+        },true) */// here first the the ul contents will execute on clicking the "owl" img and than the 'owl' console will execute
+        // this called capturing event(form top to bottom)
+        // both are used according to the need
+
+        // sometime we don't want to stop the bubbling
+        // e.stopPropagation() // this will stop the bubbling
+        // false
+        // document.getElementById('images').addEventListener('click', function(e){
+        //     console.log("click inside the ul")
+        // },false) 
+        // document.getElementById('owl').addEventListener('click', function(e){
+        //     console.log("owl img clicked") 
+        //     e.stopPropagation() // this will stop the bubbling . now if we click on the owl img than only the owl will execute
+        // },false)  
+        // ture
+      /*    document.getElementById('images').addEventListener('click', function(e){
+            console.log("click inside the ul")
+            e.stopPropagation()// this will stop the event capturing
+
+        },true) 
+        document.getElementById('owl').addEventListener('click', function(e){
+            console.log("owl img clicked") 
+
+            },true) */
+               //prevent default -- stoping the by-default behaviour 
+              //let we will stop the by-defalut behaviour of the anchor tag <a> as when we click on it, 
+             //it will redirct us to the link as here we will move to the google as <a> have google link
+            //we are stoping it 
+         /*   document.getElementById('google').addEventListener('click', function(e){
+                console.log('google link will stop working');
+                e.preventDefault()
+                // this will stop the link behavoir now if we click on the link(that will re-direct 
+                //to the google page)this will stop us to go on the link mean the link will not work
+            },false) */
+
+// let hide all the picture
+document.querySelector('#images').addEventListener('click',function(e){
+    // console.log(e.target.parentNode); // parentNode mean to select the parent element because here we are not just removing the img also the elemt in which img exists
+//    let removeIt = e.target.parentNode
+      // removeIt.remove()
+     // 2nd method
+    // removeIt.parentNode.removeChild(removeIt)
     
-</body>
+     // but there is a problem, that if we clcik on the li or outside the img in browser than all images will disaper
+    // as <li> parent is <ul>
+   // when we clcik on the img than parent node of that img is <li> as img is inside <li> so li will remove but if we 
+  //click on the <li> as it is insdie <ul> here ul is the parent of li so the whole ul will remove
+
+// so we will make condition for it 
+if(e.target.tagName === 'IMG')// tagName will give us the tagName where we click e.g if we click on img than it will give us IMG and if we clcik on li than LI
+{  // in the condition we are telling that if tagName is "IMG" than remove that img
+ let removeIt = e.target.parentNode
+ removeIt.remove()
+}
+
+    
+})
+    </script>
 </html>
