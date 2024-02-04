@@ -10,13 +10,20 @@ const myArr = [1, 2, 3, 4, 5]
 
 const newArr = myArr.reduce((accumulater, currentValue) =>
 {
-    // console.log(`acc:${accumulater} and currvale:${currentValue}`);//checking 
+   //  console.log(`acc:${accumulater} and currvale:${currentValue}`);//checking 
 
-    return accumulater + currentValue
+   //  return accumulater + currentValue
 },0)// 0 means what will be the value of accumulator at the start / initial value of acc
 
 // console.log(newArr);
-
+/*
+acc:0 and currvale:1
+acc:1 and currvale:2
+acc:3 and currvale:3
+acc:6 and currvale:4
+acc:10 and currvale:5
+15
+ */
 // 
 // in the above program when reduce begain on "myArr" first the accumulator will have '0' and currentValue
 // will have the value coming from the array "myArr"
@@ -28,10 +35,10 @@ const newArr = myArr.reduce((accumulater, currentValue) =>
 // finaly the 15 will return to newArr 
 // c.log(newArr) = 15
 
-// const myArr = [1, 2, 3, 4, 5]
+const myArr2 = [1, 2, 3, 4, 5]
 // shortcut
-//  const add = myArr.reduce((acc, curr )=> acc + curr, 0)
-//  console.log(add);
+ const add = myArr2.reduce((acc, curr )=> acc + curr, 0)
+//  console.log(add); // 15
 
 // buy differnt courses and get the total price of all courses
  const shoppingCart = [
