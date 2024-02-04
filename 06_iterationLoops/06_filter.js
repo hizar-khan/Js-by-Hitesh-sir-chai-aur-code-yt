@@ -60,4 +60,7 @@ const myArr = []
   const filteredBooks = books.filter(item => item.genre === 'Fiction'  || item.publish >= 2000 )
   console.log(filteredBooks);
 
-  // in the above example filter loop will run each objec of  books array ,each objcet will come into the parameter item , so we can do anyting on that obj by using its key values pair e.g each obj name will item so to get value from obj we will use this mehtod objName.keyName(item.title)
+      // in the above example filter loop will run each objec of  books array,
+     // each objcet will come into the parameter item , so we can do anyting on 
+    // that obj by using its key values pair e.g each obj name will item so to get
+   // value from obj we will use this mehtod objName.keyName(item.title)

@@ -32,9 +32,12 @@ const chanMap = chanArr
                 .map(item => item + 10)// [16, 17, 18, 19, 20]
                 .map(item => item + 20)// [36, 37, 38, 39, 40]
 // console.log(chanMap);
-// in the above program first map on "chanArr" it will add 5 with each item of the  array and return new array which will stroed in "chanMap" array
-// than second map will start and add 10 with each item of the chanMap array and retrn new array to "chanmap" array
-// than third map will add 20 to each item of the array that is stored inside "chanMap" array and new array will retrun and strored in "chanmap " array 
+// in the above program first map on "chanArr" it will add 5 with each item of the 
+// array and return new array which will stroed in "chanMap" array
+// than second map will start and add 10 with each item of the chanMap array and
+// retrn new array to "chanmap" array
+// than third map will add 20 to each item of the array that is stored inside "chanMap" 
+//array and new array will retrun and strored in "chanmap " array 
 // now print the chanMap to get the final result
 
 // we can chan map and filter together

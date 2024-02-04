@@ -18,7 +18,8 @@ const newArr = myArr.reduce((accumulater, currentValue) =>
 // console.log(newArr);
 
 // 
-// in the above program when reduce begain on "myArr" first the accumulator will have '0' and currentValue will have the value coming from the array "myArr"
+// in the above program when reduce begain on "myArr" first the accumulator will have '0' and currentValue
+// will have the value coming from the array "myArr"
 // at retrun the accumulatro + currentValue will do addition as acc =0 at firstTime and currntValue = 1 so 0+1 = 1
 // the the value of accumulator will became 1 and the currntValue will be 2 htat is coming from the array , so return 1+2 = 3
 // now the accumulator will became  3 and currentValue = 3 , return 3 + 3 = 6
