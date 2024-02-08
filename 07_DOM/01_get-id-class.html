@@ -29,10 +29,27 @@
         </ul>
     </div>
 </body>
+<script>
+    // document.getElementById("title")//<h1 id="title" class="heading">…</h1> // getting what is inside the elemnt that have id ='title'
+    // document.getElementById('title').id // 'title' // getting just idName
+    // document.getElementById("title").className // "heading" // write here className not class(as we will do in rect.js also)
+    // document.getElementById("title").getAttribute('class') // "heading" // here just write class to get class attribute
+    // document.getElementById("title").getAttribute('id') // "title"
+
+    // we can setAttribute inside the tag className/idName/etc
+    document.getElementById('title').setAttribute('class', 'test')// it will overRide the old className
+     document.getElementById('title').setAttribute('class', 'heading test')//it will keep the oldClassName and also insert newClassName
+
+
+
+
+</script>
 </html>
 
 
 <!-- 
+    in window we have document, in documnet we have html, html have two childs 1)head 2)body
+
  DOM : mean document Object Model - used to munupulate the webpage with help of js
  doucment is used to get/modified/target anyThing(element) of webpage
  documet.getElementById/ByClass/ClassName are used to target specific element
@@ -59,18 +76,17 @@ document.getElementById('title').getAttribute('class')
 'heading'
 
 we can set Attribute by using method setAttribute('id/class','idName/className')
-document.getElementById('title').setAttribute('class', 'test') // it will always override mean it will remove the old attribute 
-name //
-// here it will remove/override the old className "heading" and with 'test' 
+document.getElementById('title').setAttribute('class', 'test')
+ // it will always override mean it will remove the old attribute name 
+// here it will remove/override the old className "heading"  with 'test' 
 //if you want to not remove the old className than do this .setAttribute('class', 'newClassName OldClassName')
 
-document.getElementById('title').setAttribute('class', 'test heading')
+document.getElementById('title').setAttribute('class', 'test heading')// 'test heading'
 
 we can store the documet.getElemetByName()  in a variable
 const getElement = documet.getElemetByName()
-so we can do mant things on varible e.g.
-
-
+so we can do many operations/things on that variable
+ e.g.
 let heading = getElementById('title')
 changing color
 heading.style.color = 'red'
@@ -92,45 +108,59 @@ title.innerText
 'Dom learning on Chai aur Code'
 
 all the above do same thing than what is differnce
-innerText vs innerContent
+***********innerText vs innerContent vs innerHTML*************
 title.innerText
 'Dom learning on Chai aur Code' // did'nt show the hidden text
 title.textContent
 'Dom learning on Chai aur Code YOUTube Channel' // it show the hidden text
 ﻿
-innerHtml show everyThng even child tags e.g.
+
+innerHtml show everyThng even child-tags e.g.
 title.innerHTML
 'Dom learning on Chai aur Code <span style="display: none;">YOUTube Channel</span>'
+*************************
+ +++++++++++++++  QuerySelector  +++++++++
 
- QuerySelector
+ document.querySelector('target/SelectorName') e.g  
+ document.querySelector('#idName')    e.g  document.querySelector('#title')
+ document.querySelector('.className') e.g  document.querySelector('.heading')
+ document.querySelector('tagName')    e.g  document.querySelector('h2')
 
- we can target elements with help of querySelector (it will do things same as above)
+ document.querySelector('input[type="password"]')
+ document.querySelector('p:nth-child(2)')
+
+
+
+ we can target elements with help of querySelector 
+ (it will do things same as above)
  document.querySelctor('#idName/.ClassName')
 
-  const myUL = document.querySelector("ul")
- myUL.style.color = "yellow"
+  const myUL = document.querySelector("ul") // it will select the ul and what inside the ul
+ myUL.style.color = "yellow" // it will color all the li that is inside the ul
  // targeting li inside the ul
- const myLi1 = myUL.querySelector('li')
- myLi1.style.backgroundColor = 'yellow'
+ const myLi1 = myUL.querySelector('li') // it will only select the first <li> inside the ul tag
+ myLi1.style.backgroundColor = 'yellow' // it will color the first li inside the ul
 
 
  we can select more than one elements by using ==> querySelectorAll()
 
- document.querySelectorAll('li')
+ document.querySelectorAll('li') // it will give nodelist which is like an array but not the actual array
 NodeList(3) [li, li, li]
  
 it seems that we are getting array in above nodelist
-as we know that we can loop methods(foreach,map,reduce etc) on array ,so can we loop on the above nodelist ,let check
-most of the people think that the above is array but it is not the full/actual array . always check the prototypes of it
-// here  in its prototype we have forEach so we can apply it on nodelist element
+as we know that we can loop methods(foreach,map,reduce etc) on array,
+so can we loop on the above nodelist ,let check most of the people think that
+the above is array but it is not the full/actual array. always check the prototypes of it.
+
+//here  in its prototype we have forEach so we can apply it on nodelist element
 liList
 NodeList(3) [li, li, li]
 liList.forEach(item => {
     item.style.backgroundColor = 'green'
 })
 // it will green all li bcz li is nodelist which similar as array(but not actual array) and 
-each elemt nodelist coming inside the parameteer "item"
-we can give multiple styli to   it
+each elemt of nodelist  will came  into the parameteer "item"
+we can give multiple style to   it
 liListt.forEach(item => {
     item.style.backgroundColor = 'yellow'
     item.style.color = 'red'
@@ -146,10 +176,12 @@ lilist.style.color = "blue"
 VM1403:1 Uncaught ReferenceError: lilist is not defined
     at <anonymous>:1:1 ******************** Error
 
-        the array is becasue we have select many things
+        the array is-- becasue we have select many things
         so we  will treat it as an array  than we can work on it e.g
 
         liList[0].style.color = 'green' // it will color the first child as array start from '0'
+
+_++++++++++++++++++  getElemetByClassName +++++++++++++++++++++
 
         const head1 = document.getElementsByClassName('heading')
 undefined
@@ -157,22 +189,25 @@ undefined
 HTMLCollection [h1#title.heading, title: h1#title.heading]
     head1[0].style.color = 'green'
 
-*********************************************************************
+********************************************************************* HTMLCollection 
 
     //getElementByClassName()
-    it will give as HtmlCollection which is look same as nodeList but both are diffenet /let check its protoTypes
+it will give as HtmlCollection which is look same as nodeList but
+both are diffenet /let check its protoTypes
+
     document.getElementsByClassName('list-item')
 
-    we can style it by treatin it as array
+    we can style it by treating it as an array
     ************** 
 const itemList = document.getElementsByClassName('list-item')
 
 itemList[0].style.color = 'red'
 ********************
-let check it protoType which looping method (foreach) 
+let check it protoType  (let we have to  looping method (foreach) in its prototype 
+but there is no looping method inside its prototype  so we have to convert it into array by using Array.from(htmlColtionName) )
 HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]
 
-
+//protoype of HTMLCollection
 0
 : 
 li.list-item
@@ -216,10 +251,10 @@ get length
 : 
 Object
 
-*************************** we can do looping on HTMLcollection because it doest'nt have
- any looping mehtod(forecah etc) while nodeLIst have forEach
-than how we will give style to HTMLCollection -- we will convert it 
-to convert it we use Array
+*************************** we can'nt do looping on HTMLcollection because it doest'nt have
+ any looping mehtod(forecah etc) while nodeLIst have forEach.
+than how we will give style to HTMLCollection -- we will convert it into proper array.
+to convert it we use Array method(.from),
 in array we have method .form () it will covert HtmlColleciton to An array
 Array.from(HtmlCollectinName)
 

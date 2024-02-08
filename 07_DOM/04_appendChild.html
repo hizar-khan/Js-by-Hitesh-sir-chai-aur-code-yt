@@ -17,7 +17,7 @@
 
 
 
-//     // HOw to create new element inside the alredy exixting element
+//     HOw to create new element inside the alredy exixting element
 //     const ul = document.querySelector('ul') // target the parenet element 
 //   console.log(ul); // let check
 //   const childLi = document.createElement('li') // than create new element
@@ -47,11 +47,11 @@ newElement("Node Js")
 
 // but but but , the above program have a Problem
 // at this moment inthe html document we have only one element // so by adding new element with help of above ftn/program
-// it travese the whole tree here we have just one elemnt that is why it done wiht no-diffuclty but what if 
+// it travese the whole tree here we have just add one elemnt that is why it done with no-diffuclty but what if 
 //we have more than one element ,someTime we have hundred and thousand of element ,
 //so to travese them it will became problemetic 
 // becasue we are going to at the end (adding new element at last) for which we are traversing whole tree
-// so each time the above ftn run the whole tree will traverse each time , that's not Good Thing, it create issues
+// so each time the above ftn run, the whole tree will traverse each time , that's not Good Thing, it create issues.
 // the whole traversing is due to the .innerHtml() which override the node ,if we use .createTextNode()
 // which just add text not traverse the whole tree
 
@@ -68,7 +68,8 @@ function addElementOptmze (langName){
     newLi.style.color = 'red'
     // in the above line we take the newly created li and appenChild new  textNode in it 
 
-     document.querySelector('.language').appendChild(newLi)
+     document.querySelector('.language').appendChild(newLi) // this will add new li inside the ul with className .language
+    // document.body.appendChild(newLi) // this will add the li in the body not inside the ul
 
 
 }
@@ -77,7 +78,8 @@ function addElementOptmze (langName){
  addElementOptmze('Node Js')
 
 
- // here we are not traversing the whole tree and just add new Element  this is becuase of .createTextNode() which not Override the node it just create new node
+ // here we are not traversing the whole tree and just add new Element 
+ // this is becuase of .createTextNode() which not Override the node it just create new node
 
 
   

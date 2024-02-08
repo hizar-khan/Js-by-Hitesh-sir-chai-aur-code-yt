@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating New Elements in DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+
+
+    
+</body>
+<script>
+    // creating new element in dom on webpage
+    const div = document.createElement('div')
+    
+     console.log(div);
+ // now we want to add propeties like idName/ClassName
+ // as we seen in the nodelist that each element is itself nodelist indvivually - that contain text id/class content etc
+ // how to set/give className/idName to an element in dom
+//  div.className = "myClass" // so your className is myDiv
+//  we can also set idName
+// div.id = "myId"
+// div.id = Math.floor(Math.random() * 10 + 1) // random id no.
+// div.id = Math.round(Math.random() * 10 + 1)
+
+// setAttribute is used to set costom attribute in key vlues pair
+// we can set idName/className with the help of setAtribute
+div.setAttribute('id', 'newId')
+div.setAttribute('title','titleName')
+div.setAttribute('class','myClass')
+
+
+// adding content inside that div 
+// div.innerHTML = "Learning DOM | Chai Aur Code"// it just Override ///(document.body.appendChild(div) // this is used to show the text/content on the webpage)
+
+// as the div we have created does'nt show on the webPage in browser
+// it is bcz the div we created is inside the memeory
+// now how to display on the browser
+// most of the people do the following method to add text in  div
+// const addText = document.createTextNode("Chai Aur Code") 
+// div.appendChild(addText)
+
+// till now nothings is display on the webpage browser bcz 
+// to dispaly on webPage we have to attach the div to the document 
+// document.body.appendChild(div) // this will display what is inside the div on webPage
+
+// now we can style that text 
+div.style.backgroundColor = 'red'
+// practice 
+// shorcut
+// div.appendChild(document.createTextNode("hello")) // this will create text inside the div
+// document.body.appendChild(div)// this will display that divContent on webpage
+// Now we have created a new Element with the help of above code 
+// so we can put the above code inside a  funtion 
+//to add new elements on the webPage
+// or we can loop on it 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Math.round() vs Math.floor() 
+// Math.round()  -- 1.5 up 1.9 = will be  2 while 1.4 to 1.0 = 1
+// console.log(Math.round(3.3)); // 3
+// console.log(Math.round(3.5)); // 4
+// console.log(Math.round(3.6));// 4
+// console.log(Math.round(3.4)); // 3
+
+// console.log('-------------');
+// //Math.floor()  // will go always to the last integer e.g 3.5,3.9,3.3 all  will became 3 after its floor
+// console.log(Math.floor(3.3)); // 3
+// console.log(Math.floor(3.5)); // 4
+// console.log(Math.floor(3.6));// 4
+// console.log(Math.floor(3.4)); // 3
+
+
+</script>
+</html>

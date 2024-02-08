@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | chai Aur Code</title>
+</head>
+<body style="background-color: #212121; color: #fff;;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday </div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+   const parent = document.querySelector('.parent') // select class .parent
+
+    /**
+   const parent = document.querySelector('.parent') // select class .parent
+   console.log(parent); // it will print what inside the class .parent
+   console.log(parent.children[2]); // it will give us element  at the index 2 as
+   console.log(parent.children[2].innerHTML); // give the content/text inside the element at the index 2
+for (let i = 0; i < parent.children.length; i++){ //note only parent does't give
+// the HTMLColleciton use .children with parent to 
+// get HTMLCollection which is act like an array
+    console.log( parent.children[i].innerHTML);
+    parent.children[i].style.color = 'green' 
+   parent.children[3].style.color = 'red'
+
+  }
+  */
+
+//   parent.children[1].style.color = 'red'
+
+   /*
+   console.log(parent);
+    console.log(parent.children); // give HTMLColleciton of the .parnet (all child tags of the parent tag in HTMLCollection) act as array but not actual array
+   console.log(parent.children[2]); // it will give us element  at the index 2 as
+    the .children give us HTMLCollection which is like Array 
+   console.log(parent.children[2].innerHTML); // give the content/text inside the element at the index 2
+   */
+
+// for (let i = 0; i < parent.children.length; i++){ //note only parent does't give
+// the HTMLColleciton use .children with parent to 
+// get HTMLCollection which is act like an array
+//     console.log( parent.children[i].innerHTML);
+      //parent.children[1].style.color = 'red'
+//   }
+
+//   parent.children[1].style.color = 'red'
+
+  // we have other properties not only children
+//   console.log(parent.firstElementChild); // <div class = 'day'> Monday </div>
+//   console.log(parent.firstElementChild.innerText); // Monday
+//   console.log(parent.lastElementChild);
+//   parent.lastElementChild.style.color = 'green' // it will color the last child  of the class parent
+
+//   const dayOne = document.querySelector('.day')
+//   console.log(dayOne); //monday
+//   // how to go from child to parent element
+//   console.log(dayOne.parentElement); // it will give parent and what inside the parent
+  
+//  we can move on next element inside children e.g 
+//from one sibling to another sibling
+//   console.log(dayOne); //monday
+ 
+//   console.log(dayOne.nextElementSibling); // Tuesday
+//    const dayTwo = dayOne.nextElementSibling ;  // stored "Tuesday" in "dayTwo" variable
+// //    we can go back to the previous sibling 
+//   console.log(dayTwo.previousElementSibling); // Monday
+
+console.log('Total Days:', parent.textContent); // gives all the content e.g monday tuesday wednesday thursday
+/*output
+Total Days: 
+        Monday
+        Tuesday
+        Wednesday 
+        Thursday
+*/
+console.log('NODES:', parent.childNodes); // gives us all child nodes // it will show 9 nodes but in 
+//the above paent we have only 4 four nodes(div) ..note that line-break ,
+//text(when we complete one line and Enter to move to next line that Enter will 
+//consider as text which is node) and other things are also nodes that why it show 9 nodes insted 4(as we ) 
+// so as we seen that Enter(used to break line) is consider as node(text) but remeber
+// only one Enter will count as node if we Enter more than one node 
+//(as someTime we make space so we break lines more than one) so that will not count 
+// comment  will also consider/count as node
+
+</script>
+</html>

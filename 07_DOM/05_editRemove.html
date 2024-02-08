@@ -30,28 +30,33 @@
 
     // first method
     // secondLang.innerHTML = "BlockChain" 
+    // shorcut
+    
     // but don't use this 'innerHtml' due it's whole traversing tree
     // here we are ceating new element and than replace it with nth-child(2)
-    /**
+    
     //  * second method
-    const replaceLi = document.createElement('li')
-      replaceLi.appendChild(document.createTextNode("LOleePop"))
-      secondLang.replaceWith(replaceLi)
-      */
-/**
-      //third method
-    const addLi = document.createElement('li')
-    addLi.textContent = "Moye Moye"
-    secondLang.replaceWith(addLi)
+    // const replaceLi = document.createElement('li') // first creat new element
+    //   replaceLi.appendChild(document.createTextNode("LOleePop"))
+    //   secondLang.replaceWith(replaceLi)
+    
+    // shorcut
+    //   secondLang.replaceWith(document.createTextNode('hello')) // this will directly add the text new in the selected element
+      
 
-    */
+      //third method
+    // const addLi = document.createElement('li')
+    // addLi.textContent = "Moye Moye"
+    // secondLang.replaceWith(addLi)
+// shortCut
+    secondLang.replaceWith(textContent = "Election-2024")
 
     // forth method
     // secondLang.outerHTML = "<li>TypeScript</li>"
  
     // Remove element
 
-    secondLang.remove()
+    // secondLang.remove()
 
 
 </script>
