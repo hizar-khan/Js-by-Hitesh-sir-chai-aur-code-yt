@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interval Example</title>
+</head>
+<body>
+
+    <h1>SetInterval Neutral</h1>
+<button id="startButton">Start</button>
+<button id="stopButton">Stop</button>
+<p>Count: 0</p>
+
+<script>
+    
+let intervalId;
+let count = 0;
+let h1 = document.querySelector('h1')
+
+document.getElementById('startButton').addEventListener('click', () => {
+    // Start the interval
+    if(!intervalId){
+        intervalId = setInterval(() => {
+        console.log('Interval is running...');
+        h1.innerHTML = 'IntervalStarted'
+        h1.innerHTML =`${Date.now()} hello`
+         document.querySelector('p').textContent = `Counted:${count++}`;
+        // Add your interval logic here
+    }, 1000); // Interval duration: 1000 ms (1 second)
+    }
+});
+
+document.getElementById('stopButton').addEventListener('click', () => {
+    // Stop the interval
+    clearInterval(intervalId);
+    intervalId = null
+    console.log('Interval stopped.');
+    h1.innerHTML = 'Time Stopped'
+    
+});
+</script>
+
+</body>
+</html>

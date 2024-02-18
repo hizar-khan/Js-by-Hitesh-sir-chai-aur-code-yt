@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pressKey</title>
+    <style>
+        table,tr,th,td{
+             border: 2px solid black;
+            border-collapse: collapse;
+        }
+        div{
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="div"> Press Any Key</div>
+
+
+
+</body>
+
+<script>
+   let table = document.querySelector('table')
+    window.addEventListener('keydown',function(e){
+        let keyCode = e.keyCode;
+        let keyName = e.key === " " ? "space": e.key; // this is bxz when we press "space" btn than keyName will be empty so to prevet it we use terney opeator to "" "space"
+        div.innerHTML = `<table>
+             <tr>
+                <th>keyName</th>
+                 <th>keyCode</th> 
+                </tr>
+           <tr> 
+            <td> ${keyName}</td>
+            <td>${keyCode}</td> 
+            </tr>
+            </table>
+            `
+        console.log(keyCode);
+    })
+    console.log('hello');
+</script>
+</html>

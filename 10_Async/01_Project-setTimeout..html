@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout</title>
+</head>
+<body>
+    <h1 id="h1">Chai Aur Code</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+    
+</body>
+<script>
+    // setTimeout
+    // setInterval etc
+     // are browser base api funciotns
+
+// setTimout is used to 
+// setTimeout() is a method which also call the api
+// these ftn's(setTimeout,setInterval,clearInterval etc) are not core ftn's , these are avalible in browser
+// handler,callbacks are all ftn's with no name(may have name sometime)
+//  syntx 
+// setTimeout(() => {
+    
+// }, timeout); // timeout mean how much time take to execute the ftn (time in ms)
+
+
+let btn = document.querySelector('#stop')
+let text = document.querySelector('#h1')
+let startBtn = document.querySelector('#start')
+
+// setTimeout(() => {
+//     console.log('hixar khan');
+//     btn.style.color = 'red'
+//     text.style.color = 'green'
+
+
+// }, 4000); 
+// it's mean execute the ftn after 4 second
+// setTimeout says give me time during/after which i will execute what inside me.
+// setTimeout will execute once after the give time
+
+// we can  give refenece of a ftn's inside the handler/callback of setTimeout ftn 
+// (remember! give refenrce ftnName not ftn exection ftnName())
+
+let changeColor = function(){
+    text.style.color = 'red'
+    text.innerHTML = "I'M! Changed"
+    console.log('Hizar khan');
+}
+let colorTime = setTimeout(changeColor,4000) // this will change the text and color after 4 seconds
+
+// how to stop the above setTimeout() before it execute
+// clearTimeout() is used to stop the setTimeout() from execution
+// clearTimeout(colorTime)// remeber give refenence of that setTimeout 
+//which we want to not execute, write this setTimeoutREfence, 
+//not  that setTimeoutREfence()
+
+//now here i want to stop the setTimeout with help of button 
+//(when i click on button than setTimout out stop its execution)
+
+
+
+
+
+
+
+
+// My ninja practice
+
+// let stopBtn = btn.addEventListener('click', function(){
+//     clearTimeout(colorTime)
+//    let h1 =  document.createElement('h1')
+//    let addText = document.createTextNode("setTimout stopped")
+//    h1.appendChild(addText)
+//    document.body.appendChild(h1)
+
+// })
+// startBtn.addEventListener('click', function(){
+//    setTimeout(changeColor,3000)
+//    let h1 =  document.createElement('h1')
+//    let addText = document.createTextNode("SetTimeOUt started")
+//    h1.appendChild(addText)
+//    document.body.appendChild(h1)
+//  stopBtn.remove()
+
+// })
+
+
+
+
+
+// setInterval() it says give me time, after that i will execute
+// what insde me on repeat(here the execute will contiue until
+// clearInterval())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let on = setInterval(()=>{
+//     console.log("Print my name on repeat");
+  
+// },2000)// after each 2 second the ftn's will execute on repeat 
+
+// // stop the abve interver ftn with my ninja technique
+// setTimeout(() => {
+//     clearInterval(on)
+// }, 3000);
+</script>
+</html>

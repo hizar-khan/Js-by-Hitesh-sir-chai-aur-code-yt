@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ChangeBackGRoundColor</title>
+    </head>
+    <body id="body" style="color: #fff; background-color: #232323;">
+        <h1 style="text-align: center;"></h1>
+        <h2>When we click on <mark>"Start"</mark> Button than background-color
+            should change after every second </h2>
+        <h3>While When we Click on <mark>"Stop"</mark> button than change in the
+            background-color should be stoped</h3>
+
+        <button id="start"
+            style="padding: 6px 14px; border-radius: 20px; font-size: 16px; font-weight: 600;">Start</button>
+        <button id="stop"
+            style="padding: 6px 14px; border-radius: 20px; font-size: 16px; font-weight: 600;">Stop</button>
+        <p
+            style="border: 2px solid; padding: 12px; font-size: 16px;">colorName</p>
+
+    </body>
+    <script>
+// my paractice logic
+/*
+    let intervalId;
+    const randomColor = function(){
+        const hexValue = "0123456789ACDEF"
+        let color = '#'
+        for (let i = 0; i < 6; i++) {
+        color += hexValue[ Math.floor(Math.random() * 16  ) ]
+        }
+        return color
+    }
+   
+    let startBtn= document.querySelector('#start')
+    let StopBtn = document.querySelector('#stop')
+    let colorName = document.querySelector('p')
+    let body = document.querySelector('#body')
+    let h1 = document.querySelector('h1')
+
+
+   startBtn.addEventListener('click',function(){
+      if (!intervalId) {
+        intervalId =  setInterval(() => {
+        body.style.backgroundColor = `${randomColor()}`
+        colorName.textContent=  `Color-hex-Value :${randomColor()}`
+      h1.textContent = 'Radnom BackGround-Color Generating Started'
+      h1.style.backgroundColor = 'red'
+       },2000);
+      }
+    })
+
+StopBtn.addEventListener('click',function(){
+      clearInterval(intervalId)
+      intervalId = null // flasing out the intervalId to prvent override it when we call start agiain the setInterval
+      h1.textContent =`Color-Generator stoped, Click on Start Button to REgenarate Color`
+      h1.style.backgroundColor = 'red'
+      body.style.backgroundColor = '#232323'
+      colorName.textContent = `displayed Color-Value is :${randomColor()} this colorCode from the previous setinterval`
+    })
+    */
+  
+// hitesh Sir code logic
+// first generate reandom Colors
+const randomColor = function(){
+        const hexValue = "0123456789ACDEF"
+        let color = '#'
+        for (let i = 0; i < 6; i++) {
+        color += hexValue[ Math.floor(Math.random() * 16  ) ]
+        }
+        return color
+    }
+
+let intervalId;
+const startChangingColor = function(){
+   if(!intervalId){ 
+    intervalId = setInterval(changeBgColor, 1000)
+   }
+
+  function changeBgColor(){
+    return document.body.style.backgroundColor = randomColor()
+   }
+}
+const stopChangingColor = function(){
+    clearInterval(intervalId)
+    intervalId = null
+}
+document.querySelector('#start').addEventListener('click',startChangingColor)
+
+document.querySelector('#stop').addEventListener('click',stopChangingColor)
+
+    
+</script>
+</html>

@@ -31,7 +31,7 @@
         </div>
     </body>
     <script>
-        // all the events in js are run sequentially(same execptions are exists, we will take about them)
+        // all the events in js are run sequentially(some execptions are exists, we will talk about them later)
         //we can ignore these sequencness(as js is sequencitoal language), e.g in asynchornize code same we do in events
         // these events are based on some activites e.g when we are moveing mouse or 
         //clicking with mouse,mouseIN, mouseOut,mouseOver, pressing keybord buttons, dragAndDrop, these are events etc
@@ -45,15 +45,19 @@
         /*     
         document.getElementById('owl').onclick = function(){
             alert("owl") 
-              // this approach is good but not very good/prefect may onclick() cause some problems and
+              // this approach is good but not very good/prefect, the .onclick() may cause some problems and
              // provide less features,  as we are not getting enough infromations
             // we have to use EventListener bcoz it not just give us onclick() but also
            // give propagations ability. it gives us more features 
         }    */
 
-        // best approach is using EventsListiner ( give performs/listen differnts evnets e.g mouseEvents, keyBoardEvetns even dragAndDrop etc)
-        // syntax first birng element on which event is to perform with dot(.) and addEvnetlistenr('EventName'function(){},true/false here false will be bydefalut)
-        // why the true and false is write at the third parameter bocz without it the events can't complete(not clear yet, we will study more about it) and here false is by defalut that is why we not write it normally
+        // best approach is using EventsListiner 
+        //( give performs/listen differnts evnets e.g mouseEvents, keyBoardEvetns even dragAndDrop etc)
+        // syntax first birng element on which event is to perform with dot(.) and
+        // addEventListiner('EventName'function(){},true/false here false will be bydefalut)
+        // why the true and false is write at the third parameter bocz without it the events
+        // can't complete(not clear yet, we will study more about it) and here false is by defalut,
+        //that is why we not write it normally
         // getingElment.addEventListener('eventName',function(){},false/true //bydefault false)
         /*
         document.getElementById('owl').addEventListener('click',function(e){
@@ -67,13 +71,15 @@
         document.getElementById('owl').addEventListener('click', function(e){
             console.log(e) 
             // this "e" is event object, it is very important, study about it
-            // it will have many things , many events,mostly events are browser evnets and enviroments events e.g where mouse clicked what was the positon of mouse etc
+            // it will have many things , many events,mostly events are browser 
+            // evnets and enviroments events e.g where mouse clicked what was the positon of mouse etc
             //what is the view, when mouse clicked what were the height and width of window, on what time it was clicke etc\
             // in iterview may ask make a application and tell us the the time of clcik 
             // creat a appliction and when the mouse click on div than make a circle
         },false) */
         // basic events to study 
-        // type, timestamp, defautprevented(change the defaut behaviour of something e.g as form will submit on clicking submit but we can stop this)
+        // type, timestamp, defautprevented(change the defaut behaviour of something 
+        // e.g as form will submit on clicking submit but we can stop this)
         // target, toElement, srcElement, currentTarget,
         // clientX. clientY, screenX, screenY,
         // altkey, ctrkey (is the keys pressed or not), keyCode(projects keyBoard speed)
@@ -95,13 +101,17 @@
 
     /*    document.getElementById('images').addEventListener('click', function(e){
             console.log("click inside the ul")
-        },false)  // when we click inside the anyImage/ul in browser than "click insde the ul" will be execute in the console
+        },false) 
+         // when we click inside the anyImage/ul in browser than "click insde the ul" will be execute in the console
 
         document.getElementById('owl').addEventListener('click', function(e){
             console.log("owl img clicked") 
         },false) */ 
-        // but here if we click on the img with the id "owl" than the "owl img clciked" will execute but as we have event on the ul and the owl img is insede the ul than both ul and owl console will execute
-        // as false is doing bubbling(as bubble blow/move from bottom to up ) so first the owl will execute than clcicked will execute
+        // but here if we click on the img with the id "owl" than 
+        // the "owl img clciked" will execute but as we have event on the ul 
+        // and the owl img is inside the ul than both ul and owl console will execute
+        // as false is doing bubbling(as bubble blow/move from bottom to up ) so first 
+        // the owl will execute than ul clcicked will execute
         
         // let check "true" parameter
   /*      document.getElementById('images').addEventListener('click', function(e){
@@ -109,8 +119,10 @@
         },true)  
         document.getElementById('owl').addEventListener('click', function(e){
             console.log("owl img clicked") 
-        },true) */// here first the the ul contents will execute on clicking the "owl" img and than the 'owl' console will execute
-        // this called capturing event(form top to bottom)
+        },true) *
+        // here first the the ul contents will execute on clicking 
+        // the "owl" img and than the 'owl' console will execute
+        // this called capturing event(from top to bottom)
         // both are used according to the need
 
         // sometime we don't want to stop the bubbling
@@ -121,7 +133,10 @@
         // },false) 
         // document.getElementById('owl').addEventListener('click', function(e){
         //     console.log("owl img clicked") 
-        //     e.stopPropagation() // this will stop the bubbling . now if we click on the owl img than only the owl will execute
+        //     e.stopPropagation() 
+        // this will stop the bubbling .
+        // now if we click on the owl img than only the owl will execute
+
         // },false)  
         // ture
       /*    document.getElementById('images').addEventListener('click', function(e){
@@ -146,7 +161,9 @@
 
 // let hide all the picture
 document.querySelector('#images').addEventListener('click',function(e){
-    // console.log(e.target.parentNode); // parentNode mean to select the parent element because here we are not just removing the img also the elemt in which img exists
+    // console.log(e.target.parentNode); 
+    // parentNode mean to select the parent element because here we are not 
+    // just removing the img also the elemt in which img exists
 //    let removeIt = e.target.parentNode
       // removeIt.remove()
      // 2nd method
@@ -155,10 +172,12 @@ document.querySelector('#images').addEventListener('click',function(e){
      // but there is a problem, that if we clcik on the li or outside the img in browser than all images will disaper
     // as <li> parent is <ul>
    // when we clcik on the img than parent node of that img is <li> as img is inside <li> so li will remove but if we 
-  //click on the <li> as it is insdie <ul> here ul is the parent of li so the whole ul will remove
+  // click on the <li> as it is insdie <ul> here ul is the parent of li so the whole ul will remove
 
 // so we will make condition for it 
-if(e.target.tagName === 'IMG')// tagName will give us the tagName where we click e.g if we click on img than it will give us IMG and if we clcik on li than LI
+if(e.target.tagName === 'IMG')
+ // tagName will give us the tagName where we click e.g if we click on 
+// img than it will give us IMG and if we clcik on li than LI
 {  // in the condition we are telling that if tagName is "IMG" than remove that img
  let removeIt = e.target.parentNode
  removeIt.remove()

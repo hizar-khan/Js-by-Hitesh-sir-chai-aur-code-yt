@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+</head>
+<body>
+    <h1>Chai Aur js</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+    
+</body>
+<script>
+    // setInterval()  this will execute what inside it after the give time but it will execute on repeate , never stop until we stop it(by using clearInterval() )
+    let text = document.querySelector('h1')
+    let stoped = document.querySelector('#stop')
+    let start = document.querySelector('#start')
+let intervalId;
+
+    let changeColor = function(){
+        text.style.color = 'red'
+        text.innerHTML = "Text Chnaged"
+        console.log('started');
+        }
+         // setInterval(changeColor,3000)// it will change the color and after 3 second but on 
+        // clearInterval(stopInterval) // it will stop the execution of setInterval 
+        // but here is a problem that the setInterval will never execute due to the clearInterval
+        // so we will contorl them with the help of button start and stop
+        // let interval = start.addEventListener('click', function(){
+        // setInterval(changeColor,3000)
+        // console.log('started');
+
+// })
+
+
+start.addEventListener('click', function(){
+     intervalId = setInterval(changeColor,3000) 
+    console.log('started again');
+    text.style.color = 'green'
+    text.innerHTML = 'Started'
+
+})
+
+stoped.addEventListener('click', function(){
+    clearInterval(intervalId)
+    console.log('stopeed');
+    text.style.color = 'black'
+    text.innerHTML = 'Stopped'
+
+})
+</script>
+</html>
