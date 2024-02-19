@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Api Request</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // ApI : application Programming Interface 
+// it is talking language btw two systems.the systems may be frontend and backend
+// someOne Front--end communictaing with SomeONe Back--End
+// Or system that programmed in Java communicting with System that is programmed in Js etc etc
+// these Communiction happen through API's
+//  e.g
+// using Google Map's Api or Weather Api in your Application
+
+// famous api is of gitHub -- api.github./users etc
+// some api's have data in json which is difficult to read , to read it we have json formatter's
+// which give you in readable format
+
+
+//API request in old days(without using fetch())
+// how in old days api-request happen
+// xmlhttpRequest
+// xmlhttpRequest was mostly used in old days for apiRequect/call ,and also many frameworks use it nowadays
+// xmlhttpRequest is used in AJAX programming
+// XMLHttpTequest.ReadyState property returns the state an XMLHttpRequest client is in.
+// An XHR client exits in one of the following states:
+
+//  Value     State                    Descritption
+//   0       UNSENT              (clinet has been created. open() not called yet.) state 0  you just send request but not call the open()
+//   1       OPENED              (open() has been called.) state just send the open() b
+//   2       HEADERS_RECEIVED    (send() has been called, and headers and status are available) the request we send their headers are received but know nothing about the data that is data received or not
+//   3       LOADING             (Downloading; responseText  holds partial data.) in state no.3 load the data that how much or what type of data recieved and what is missing
+//   4       DONE                (the operation is complete.) 
+
+//xmlrequest / ajax request
+// in the xmlRequest first we will make an object from XMLHttpRequest() it is method  which contain all these state thorugh this we send and received request,obisvely there are more methods but mostly used this
+//XMLHttpRequest() contian the following states
+/*var XMLHttpRequest: {
+    new (): XMLHttpRequest;
+    prototype: XMLHttpRequest;
+    readonly UNSENT: 0;
+    readonly OPENED: 1;
+    readonly HEADERS_RECEIVED: 2;
+    readonly LOADING: 3;
+    readonly DONE: 4;
+}*/
+// it is almost a class from which we make object 
+const requestUrl = "https://api.github.com/users/hiteshchoudhary"
+const xhr = new XMLHttpRequest()
+xhr.open('GET', requestUrl) // in side the open() we have two parameters one method(get, post etc) mean which type of request we are sending, and second url of data we want in hardCode strings""
+// the request not actually send from here we should called open()
+// at the time we send the request than the state are changes containuously let check
+// console.log(xhr.readyState); // it will output 1 bcz we not saying to track continuously that's why it showing 1 we ever we say to track continuously than the state will change
+// let say to track continuously
+// .onreadystatechange it take function in which we tell what to do when states are changing contiuously
+xhr.onreadystatechange = function(){
+    console.log(xhr.readyState) // it will show the changing state e.g 2 3 4 now our request is tracking continuously
+ // this above log will execute continuosly whenever the state of our request change theat is why 2,3,4  show the state of our request
+ // now decting state of our request
+ if (xhr.readyState === 4) {
+
+    // const data = this.responseText; // responseText contain data  that we were requested 
+    // console.log(this.responseText); // we will get all the data in response
+ // let get/print/execute some data which we just received 
+//  console.log(data.followers); // we will get undefined coz the data we are receving will be in string type 
+//  console.log(typeof data); // string , so first we will convert the data  into object than we can easily get it
+ // json.parse() is used to anytype of data into object type
+ const data = JSON.parse(this.responseText)
+ console.log(typeof data); // object (it is actauly json data)
+ console.log(data);
+ //now we can access any type of data
+ console.log(data.name);
+
+}
+}
+
+xhr.send() // this is calling the open() for request
+</script>
+</html>
