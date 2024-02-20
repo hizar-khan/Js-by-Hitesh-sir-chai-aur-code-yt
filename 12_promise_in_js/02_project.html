@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise with Ahsan sir</title>
+</head>
+<body>
+    <h1>JavaScript Promise</h1>
+    
+</body>
+<script>
+const yaseen = {
+    requestMathBook (){
+       return new Promise((resolve, reject) =>{
+        setTimeout(() => {
+            console.log('Mahts book will received after 2 second');
+            resolve('maths');
+        }, 5000);
+        
+        })
+
+    }
+};
+const ahmad = {
+doMathHomeWork(){
+    // if math book received than do the following things
+    const bookPromised = yaseen.requestMathBook();
+    bookPromised.then((bookNameE)=>{
+        console.log("Book REceived:", bookNameE);
+    console.log('look at homework instructions of maths');
+    console.log('write in the notebook');
+    }
+    ).then(() => console.log("math's home Work done"))
+    console.log('SomeThing Else');
+},
+doPhysicsHomeWork(){
+    console.log('Take out the textBook of physics');
+    console.log('look at homework instructions');
+    console.log('write in the notebook');
+}
+}
+ahmad.doPhysicsHomeWork();
+ahmad.doMathHomeWork();
+</script>
+</html>
