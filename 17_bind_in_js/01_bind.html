@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React (bind)</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+    class React{
+        constructor(){
+            this.library = 'react'
+            this.server = "https://localhost:300"
+            //my-business requirement: whenever new obj is created from the above class/constructor
+            // when i click on button i want to get reference of that button 
+            // and somthing happen by clicking on button e.g when i click the form should be submitted etc
+            
+            document
+                .querySelector('button')
+                .addEventListener('click', this.handleClick
+                .bind(this))
+        }
+        // let create a method of handleclick
+        handleClick(){
+            console.log('button Clicked');
+            console.log(this.server)
+        }
+    }
+const app = new React()
+
+    // this is the story when the react come in the market.
+    // in that days there was no abstraction on bind, apply, call
+    // they were give to you some class that contaiain construtor ftn
+    // requ
+    
+</script>
+</html>
