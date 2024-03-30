@@ -19,7 +19,7 @@
             <h2>Lorem ipsum dolor sit amet.</h2>
             <h2>Lorem ipsum dolor sit amet.</h2>
         </h1>
-        <p class="para" id="parag">Lorem, ipsum dolor  elit. </p>
+        <p class="para" id="parag">Lorem, ipsum dolor <p>child1</p> <p>child2</p>  elit. </p>
         <input type="password" name="" id="">
         <ul>
             <li class="list-item">One</li>
@@ -28,33 +28,93 @@
             <li class="list-item">Four</li>
         </ul>
     </div>
+    <div class="text" id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. </div>
 </body>
 <script>
-    // document.getElementById("title")//<h1 id="title" class="heading">…</h1> // getting what is inside the elemnt that have id ='title'
-    // document.getElementById('title').id // 'title' // getting just idName
-    // document.getElementById("title").className // "heading" // write here className not class(as we will do in rect.js also)
-    // document.getElementById("title").getAttribute('class') // "heading" // here just write class to get class attribute
+    // document.getElementById("title")//<h1 id="title" class="heading">…</h1> // getting what is inside the element that have id ='title'
+    // let id=document.getElementById('title').id // 'title' // getting just idName
+    // console.log(id);// title
+
+   let class1 = document.getElementById("title").className // "heading" // write here className not class(as we will do in rect.js also)
+//    console.log(class1);
+
+    // let classAtt = document.getElementById("title").getAttribute('class') 
+    // "heading" // here just write class to get class attribute and we can get the id attribute by putting idName inside it
+    // console.log(classAtt);
+
     // document.getElementById("title").getAttribute('id') // "title"
-
     // we can setAttribute inside the tag className/idName/etc
-    document.getElementById('title').setAttribute('class', 'test')// it will overRide the old className
-     document.getElementById('title').setAttribute('class', 'heading test')//it will keep the oldClassName and also insert newClassName
+    // document.getElementById('title').setAttribute('class', 'test')// it will overRide the old className
+    //  document.getElementById('title').setAttribute('class', 'heading test')
+     //it will keep the oldClassName and also insert newClassName
 
 
 
+    //  document.getElementById("title").innerHTML = "<h2> change Heading Contents by Using <mark>innerHtml</mark>  </h2>" 
+    //  document.getElementById("title").innerText = "<h2> change Heading Contents by Using <mark>innerTEXT</mark>  </h2>" // it does'nt support the inner tags ..it will put it as text even the tag's will consider as text same with textContent
+    //  document.getElementById("title").textContent = "<h2> change Heading Contents by Using <mark>innerTEXT</mark>  </h2>" // it does'nt support the inner tags ..it will put it as text even the tag's will consider as text same with textContent
+    //  console.log(document.getElementById('title').className);
+
+// how to get  just text from an element 
+// console.log(document.getElementById('title').textContent); //  change Heading Contents by Using innerHtml  // it will show the hidden text also
+
+// how to get whole element
+// console.log(document.getElementById('title').innerHTML);// <h2> change Heading Contents by Using <mark>innerHtml</mark> </h2>
+
+// 
+// console.log(document.getElementById('title').innerText); // change Heading Contents by Using innerHtml // it will not display hidden text
+
+
+
+// console.log(document.querySelector('input[type="password"]'));
+
+// console.log(document.querySelectorAll('ul'));
+
+// let list = document.querySelectorAll('li');
+
+// list.forEach(item => {
+//     item.style.backgroundColor = 'yellow'
+//     item.style.color = 'red'
+//     item.style.fontSize = '30px'
+//     list[0].style.backgroundColor = 'blue'
+
+// })
+// list[2].style.color = 'blue';
+
+
+// console.log(document.querySelector('p:nth-child(odd)') );
+// const itemList = document.getElementsByClassName('list-item')
+// itemList[0].style.color = 'red'
+
+
+// let liList = document.querySelectorAll('li')
+// liList.forEach(item => {
+//     item.style.backgroundColor = 'green'
+// }) //it will green all the background of li
+
+const head1 = document.getElementsByClassName('list-item')
+
+// for (let index = 0; index < head1.length; index++) {
+    
+//         head1[1].style.color = 'green'
+//         // console.log(head1[1].style.color='red');
+//         // head1.
+
+// } 
+// but forEach not working 
 
 </script>
 </html>
 
 
 <!-- 
-    in window we have document, in documnet we have html, html have two childs 1)head 2)body
+    in window we have document, in document we have html, html have two child's 1)head 2)body
 
- DOM : mean document Object Model - used to munupulate the webpage with help of js
- doucment is used to get/modified/target anyThing(element) of webpage
- documet.getElementById/ByClass/ClassName are used to target specific element
- we can write/change text of webPage by useing 
- .innerHTML e.g documet.getElementById("idName").innerHTML = "<h2> change Heading Contents </h2>" 
+ DOM : mean document Object Model - used to manipulate the webpage with help of js
+ document is used to get/modified/target anyThing(element) of webpage
+ document.getElementById/ByClass/ClassName are used to target specific element
+ we can write/change text of webPage by using 
+ .innerHTML e.g document.getElementById("idName").innerHTML = "<h2> change Heading Contents </h2>" 
  
  document.getElementById('title')// targeting id
 document.getElementById('title').innerHTML = "js with Hitesh Sir"
@@ -62,7 +122,8 @@ document.getElementById('title').innerHTML = "js with Hitesh Sir"
 document.getElementById('title').id // getting id name
 'title'
 document.getElementById('title').class
-undefined // use className 
+undefined // use "className"  instead of "class" e.g
+document.getElementById('title').className
 
 document.getElementById('title').className // getting class-name
 'heading'
@@ -83,20 +144,22 @@ document.getElementById('title').setAttribute('class', 'test')
 
 document.getElementById('title').setAttribute('class', 'test heading')// 'test heading'
 
-we can store the documet.getElemetByName()  in a variable
-const getElement = documet.getElemetByName()
+we can store the document.getElementByName()  in a variable
+const getElement = document.getElementByName()
 so we can do many operations/things on that variable
  e.g.
-let heading = getElementById('title')
+let idName = getElementById('title')
 changing color
-heading.style.color = 'red'
+idName.style.color = 'red'
 
 giving padding 
-heading.style.padding = '25px'
+idName.style.padding = '25px'
 etc
 
 .textContent is used to get text of  an element
 paragraph.textContent /
+     console.log(document.getElementById('title').textContent //
+
 
 
 //
@@ -107,7 +170,7 @@ title.innerHTML
 title.innerText
 'Dom learning on Chai aur Code'
 
-all the above do same thing than what is differnce
+all the above do same thing than what is difference
 ***********innerText vs innerContent vs innerHTML*************
 title.innerText
 'Dom learning on Chai aur Code' // did'nt show the hidden text
@@ -115,9 +178,12 @@ title.textContent
 'Dom learning on Chai aur Code YOUTube Channel' // it show the hidden text
 ﻿
 
-innerHtml show everyThng even child-tags e.g.
+innerHtml show everyThing even child-tags e.g.
 title.innerHTML
 'Dom learning on Chai aur Code <span style="display: none;">YOUTube Channel</span>'
+
+// innerHTML support inner tags while innerText and textContent does'nt
+
 *************************
  +++++++++++++++  QuerySelector  +++++++++
 
@@ -133,10 +199,10 @@ title.innerHTML
 
  we can target elements with help of querySelector 
  (it will do things same as above)
- document.querySelctor('#idName/.ClassName')
+ document.querySelector('#idName/.ClassName')
 
   const myUL = document.querySelector("ul") // it will select the ul and what inside the ul
- myUL.style.color = "yellow" // it will color all the li that is inside the ul
+  myUL.style.color = "yellow" // it will color all the li that is inside the ul
  // targeting li inside the ul
  const myLi1 = myUL.querySelector('li') // it will only select the first <li> inside the ul tag
  myLi1.style.backgroundColor = 'yellow' // it will color the first li inside the ul
@@ -144,7 +210,7 @@ title.innerHTML
 
  we can select more than one elements by using ==> querySelectorAll()
 
- document.querySelectorAll('li') // it will give nodelist which is like an array but not the actual array
+let liList = document.querySelectorAll('li') // it will give nodelist which is like an array but not the actual array
 NodeList(3) [li, li, li]
  
 it seems that we are getting array in above nodelist
@@ -159,9 +225,9 @@ liList.forEach(item => {
     item.style.backgroundColor = 'green'
 })
 // it will green all li bcz li is nodelist which similar as array(but not actual array) and 
-each elemt of nodelist  will came  into the parameteer "item"
+each element of nodelist  will came  into the parameter "item"
 we can give multiple style to   it
-liListt.forEach(item => {
+liList.forEach(item => {
     item.style.backgroundColor = 'yellow'
     item.style.color = 'red'
     item.style.fontSize = '30px'
@@ -176,6 +242,8 @@ lilist.style.color = "blue"
 VM1403:1 Uncaught ReferenceError: lilist is not defined
     at <anonymous>:1:1 ******************** Error
 
+
+//REASON=====
         the array is-- becasue we have select many things
         so we  will treat it as an array  than we can work on it e.g
 
@@ -193,7 +261,7 @@ HTMLCollection [h1#title.heading, title: h1#title.heading]
 
     //getElementByClassName()
 it will give as HtmlCollection which is look same as nodeList but
-both are diffenet /let check its protoTypes
+both are different /let check its protoTypes
 
     document.getElementsByClassName('list-item')
 
@@ -204,10 +272,10 @@ const itemList = document.getElementsByClassName('list-item')
 itemList[0].style.color = 'red'
 ********************
 let check it protoType  (let we have to  looping method (foreach) in its prototype 
-but there is no looping method inside its prototype  so we have to convert it into array by using Array.from(htmlColtionName) )
+but there is no looping method inside its prototype  so we have to convert it into array by using Array.from(HTMLCollectionName) )
 HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]
 
-//protoype of HTMLCollection
+//prototype of HTMLCollection
 0
 : 
 li.list-item
@@ -252,7 +320,7 @@ get length
 Object
 
 *************************** we can'nt do looping on HTMLcollection because it doest'nt have
- any looping mehtod(forecah etc) while nodeLIst have forEach.
+ any looping method (foreach etc) while nodeLIst have forEach.
 than how we will give style to HTMLCollection -- we will convert it into proper array.
 to convert it we use Array method(.from),
 in array we have method .form () it will covert HtmlColleciton to An array
@@ -260,10 +328,28 @@ Array.from(HtmlCollectinName)
 
 Array.from(itemList)
 (4) [li.list-item, li.list-item, li.list-item, li.list-item]
-//now we can use all mehods of array  now we can  looping etc
- let keep it in a varaible then use foreach
+//now we can use all methods of array  now we can  looping etc
+ let keep it in a variable then use foreach
  const convrtdList = Array.from(itemList)
 undefined
 convrtdList.forEach(item => item.style.color = 'red' ) 
  -->
 
+<!-- 
+    we have window in window we have document in doc we have html and html have two child 1.head 2.body
+    each of them have their own child's e.g head have title and meta while body have h1 div etc
+    and these inner child have also other things like h1 have text which is called textNode. actually every thing in html are node 
+    head is node title is also node and text in title is also textnode same in body, body is node and the child also called node and 
+    the text inside the child's also have nodes that is textNode even the first break-line after each element(div,h1) is count as node
+    note that the each child's have attribute e.g idName .className etc these are not node they are attributes of that node
+    these all are called DOM
+    so know as we know everyThing on the html document. so we can access them with the help of dom 
+    as if we want to access the h1 as the h1 is the child of body and body is the child of html document
+    so first we will access the body than we can access the its child h1 e.g document.querySelector('h1')
+    some time we have more than one div child's of body so we can access the particular div with help of attribute of that div
+    e.g document.querySelector('.title')// here we want to access the div which have attribute of .title
+    we can access what inside that div i.e text 
+    e.g  // now we are getting/accessing the textNode of that div
+    we can change that text node e.g document.querySelector(.title).innerText = "Change the text"
+
+ -->

@@ -6,43 +6,93 @@
     <title>DOM | chai Aur Code</title>
 </head>
 <body style="background-color: #212121; color: #fff;;">
-    <div class="parent">
+    <div class="parent" id="parentID">
         <div class="day">Monday</div>
         <div class="day">Tuesday</div>
-        <div class="day">Wednesday </div>
+        <div class="day">Wednesday </div> 
         <div class="day">Thursday</div>
     </div>
 </body>
 <script>
-   const parent = document.querySelector('.parent') // select class .parent
+   const className = document.getElementsByClassName('day') // select class .parent
+   console.log(className); // it will print what inside the class .parent but in HTMLCollection //HTMLCollection [] but its have problem we will discuss later
+   className[2].style.color = 'red'
+//    for(let i = 0 ; i< className.length; i++){
+//     console.log(className[1]);
+//    }
+//    className.forEach(element => {
+//     console.log(element);
+//    }); not working  as htmlCollection is not full array
+   
 
-    /**
+   console.log('--------0------------');
+//    const parent = document.querySelector('.parent') // select class .parent
+//    console.log(parent); // it will print what inside the class .parent but in  /// all child 
+
+//    console.log(parent.innerHTML);
+   /*
+     <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday </div>
+        <div class="day">Thursday</div>*/
+
+//    console.log(parent.innerText);
+   /* 
+ Monday
+Tuesday
+Wednesday
+Thursday*/
+//    console.log(parent.textContent);
+   /*
+        Monday
+        Tuesday
+        Wednesday 
+        Thursday
+   */
+
+   
+//    console.log(parent.children[2]); // it will give us element  at the index 2 as// <div class="day">Wednesday </div>
+//    console.log(parent.children[2].innerHTML); // Wednesday 
+
+
+   
+
+   console.log('---------');
+
+    
    const parent = document.querySelector('.parent') // select class .parent
-   console.log(parent); // it will print what inside the class .parent
-   console.log(parent.children[2]); // it will give us element  at the index 2 as
-   console.log(parent.children[2].innerHTML); // give the content/text inside the element at the index 2
-for (let i = 0; i < parent.children.length; i++){ //note only parent does't give
-// the HTMLColleciton use .children with parent to 
+//    console.log(parent); // it will print what inside the class .parent // all the child div's
+//    console.log(parent.children[2]); // it will give us element  at the index 2 as
+//    console.log(parent.children[2].innerHTML); // give the content/text inside the element at the index 2
+
+/*for (let i = 0; i < parent.children.length; i++){ //note only parent does't give
+// the HTMLCollection use .children with parent to 
 // get HTMLCollection which is act like an array
     console.log( parent.children[i].innerHTML);
     parent.children[i].style.color = 'green' 
    parent.children[3].style.color = 'red'
+   
+  }*/
 
-  }
-  */
+// parent.forEach(item => {
+//     console.log(item);
+// }); not working 
 
-//   parent.children[1].style.color = 'red'
+//   console.log(parent.children);
+
+//   parent.children[1].style.color = 'yellow'
 
    /*
    console.log(parent);
-    console.log(parent.children); // give HTMLColleciton of the .parnet (all child tags of the parent tag in HTMLCollection) act as array but not actual array
+    console.log(parent.children); 
+    // give HTMLCollection of the .parent (all child tags of the parent tag in HTMLCollection) act as array but not actual array
    console.log(parent.children[2]); // it will give us element  at the index 2 as
     the .children give us HTMLCollection which is like Array 
    console.log(parent.children[2].innerHTML); // give the content/text inside the element at the index 2
    */
 
 // for (let i = 0; i < parent.children.length; i++){ //note only parent does't give
-// the HTMLColleciton use .children with parent to 
+// the HTMLCollection use .children with parent to 
 // get HTMLCollection which is act like an array
 //     console.log( parent.children[i].innerHTML);
       //parent.children[1].style.color = 'red'
@@ -70,7 +120,7 @@ for (let i = 0; i < parent.children.length; i++){ //note only parent does't give
 // //    we can go back to the previous sibling 
 //   console.log(dayTwo.previousElementSibling); // Monday
 
-console.log('Total Days:', parent.textContent); // gives all the content e.g monday tuesday wednesday thursday
+// console.log('Total Days:', parent.textContent); // gives all the content e.g monday tuesday wednesday thursday
 /*output
 Total Days: 
         Monday
@@ -79,13 +129,18 @@ Total Days:
         Thursday
 */
 console.log('NODES:', parent.childNodes); // gives us all child nodes // it will show 9 nodes but in 
-//the above paent we have only 4 four nodes(div) ..note that line-break ,
+//the above parent we have only 4 four nodes(div) ..note that line-break ,
 //text(when we complete one line and Enter to move to next line that Enter will 
-//consider as text which is node) and other things are also nodes that why it show 9 nodes insted 4(as we ) 
-// so as we seen that Enter(used to break line) is consider as node(text) but remeber
+//consider as text which is node) and other things are also nodes that why it show 9 nodes instead 4(as ) 
+// so as we seen that Enter(used to break line) is consider as node(text) but remember
 // only one Enter will count as node if we Enter more than one node 
 //(as someTime we make space so we break lines more than one) so that will not count 
 // comment  will also consider/count as node
+
+/*
+
+
+*/
 
 </script>
 </html>
