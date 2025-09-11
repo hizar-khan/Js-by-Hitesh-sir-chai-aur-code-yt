@@ -1,4 +1,5 @@
 const buttons = document.querySelectorAll('.button')
+// console.log(buttons); // give nodelist of the buttons. so that we can use forEach () on it
 const body = document.querySelector('body')
 
 buttons.forEach(button => {

@@ -1,46 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chai Aur Code</title>
-</head>
-<body style="background-color: #212121; color: #fff;">
-    <ul class="language">
-        <li>JavaScript</li>
-    </ul>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chai Aur Code</title>
+    </head>
+    <body style="background-color: #212121; color: #fff;">
+        <ul class="language">
+            <li>JavaScript</li>
+        </ul>
+    </body>
 
-<script>
+    <script>
     // Edit and remove element in Dom
-    function newElement (langName){
+    function newElement (langName, padding, color, bgColor, margin){
     const newLi = document.createElement('li')
- 
     newLi.appendChild(document.createTextNode(langName)) 
-
     document.querySelector('.language').appendChild(newLi)
+
+    newLi.style.padding = `${padding}`;
+    newLi.style.padding = `${color}`;
+    newLi.style.backgroundColor = `${bgColor}`;
+    newLi.style.margin = `${margin}`;
+
+
 }
 
- newElement('React js')
- newElement('Node Js ')
+ newElement('React js', '12px', 'yellow', 'red' , '6px') 
+ newElement('Node js', '12px', 'green', 'blue' , '6px') 
+ newElement('Express js', '12px', 'blue', 'pink' , '6px') 
 
  
-    // Edit element
+    // // Edit element
     const secondLang = document.querySelector('li:nth-child(2)')
 
     // first method
-    // secondLang.innerHTML = "BlockChain" 
-    // shorcut
+    secondLang.innerHTML = "BlockChain" 
+    // console.log(secondLang);
+    // // shortcut
     
     // but don't use this 'innerHtml' due it's whole traversing tree
-    // here we are ceating new element and than replace it with nth-child(2)
+    // here we are creating new element and than replace it with nth-child(2)
     
     //  * second method
-    // const replaceLi = document.createElement('li') // first creat new element
+    // const replaceLi = document.createElement('li') // first create new element
     //   replaceLi.appendChild(document.createTextNode("LOleePop"))
     //   secondLang.replaceWith(replaceLi)
     
-    // shorcut
+    // shortcut
     //   secondLang.replaceWith(document.createTextNode('hello')) // this will directly add the text new in the selected element
       
 
@@ -49,7 +56,7 @@
     // addLi.textContent = "Moye Moye"
     // secondLang.replaceWith(addLi)
 // shortCut
-    secondLang.replaceWith(textContent = "Election-2024")
+    // secondLang.replaceWith(textContent = "Election-2024")
 
     // forth method
     // secondLang.outerHTML = "<li>TypeScript</li>"

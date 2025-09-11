@@ -6,44 +6,44 @@
     <title>Creating New Elements in DOM</title>
 </head>
 <body style="background-color: #212121; color: #fff;">
-
+<h1>Creating new Elemnets with Dom</h1>
 
     
 </body>
 <script>
     // creating new element in dom on webpage
-    const div = document.createElement('div')
+    const div = document.createElement('div') //   i am creating new element on the document of the webpage
     
      console.log(div);
- // now we want to add propeties like idName/ClassName
- // as we seen in the nodelist that each element is itself nodelist indvivually - that contain text id/class content etc
+ // now we want to add properties like idName/ClassName
+ // as we seen in the nodelist that each element is itself nodelist individually - that contain text id/class content etc
  // how to set/give className/idName to an element in dom
-//  div.className = "myClass" // so your className is myDiv
+ div.className = "myClass" // so your className is myDiv
 //  we can also set idName
-// div.id = "myId"
+div.id = "myId"
 // div.id = Math.floor(Math.random() * 10 + 1) // random id no.
 // div.id = Math.round(Math.random() * 10 + 1)
 
-// setAttribute is used to set costom attribute in key vlues pair
-// we can set idName/className with the help of setAtribute
-div.setAttribute('id', 'newId')
-div.setAttribute('title','titleName')
-div.setAttribute('class','myClass')
+// setAttribute is used to set custom attribute in key values pair
+// we can set idName/className with the help of setAttribute
+// div.setAttribute('id', 'newId')
+// div.setAttribute('title','titleName')
+// div.setAttribute('class','myClass')
 
 
 // adding content inside that div 
 // div.innerHTML = "Learning DOM | Chai Aur Code"// it just Override 
-///(document.body.appendChild(div) // this is used to show the text/content on the webpage)
+//  now how to display this 'div' content on our webpage for this '.appendChild(newElement)' used.
+// document.body.appendChild(div) // this is used to show the text/content of an newly created element on the webpage)
 
 // as the div we have created does'nt show on the webPage in browser
-// it is bcz the div we created is inside the memeory
+// it is bcz the div we created is inside the memory
 // now how to display on the browser
 // most of the people do the following method to add text in  div
-// const addText = document.createTextNode("Chai Aur Code") 
-// div.appendChild(addText)
-
+const addText = document.createTextNode("Chai Aur Code") 
+      div.appendChild(addText)
 // till now nothings is display on the webpage browser bcz 
-// to dispaly on webPage we have to attach the div to the document 
+// to display on webPage we have to attach the div to the  body of the document
 // document.body.appendChild(div) // this will display what is inside the div on webPage
 
 // now we can style that text 
@@ -53,27 +53,9 @@ div.style.backgroundColor = 'red'
 // div.appendChild(document.createTextNode("hello")) // this will create text inside the div
 // document.body.appendChild(div)// this will display that divContent on webpage
 // Now we have created a new Element with the help of above code 
-// so we can put the above code inside a  funtion 
+// so we can put the above code inside a  function 
 //to add new elements on the webPage
 // or we can loop on it 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

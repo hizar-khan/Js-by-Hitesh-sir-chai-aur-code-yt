@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical Example of Closures</title>
+</head>
+<body style="background-color: #232323;">
+
+    <button id="orange"> Orange</button>
+    <button id="green"> Green</button>
+</body>
+<script>
+    // when we click on button we want to change the backGround-color of the body
+    // let orangeBtn = document.querySelector("#orange")
+    // let greenBtn = document.querySelector("#green")
+    
+    // orangeBtn.onclick = function(){
+    //     document.body.style.backgroundColor = 'orange'
+    // }
+    // greenBtn.onclick = function(){
+    //     document.body.style.backgroundColor = 'green'
+    // }
+
+     // orangeBtn.addEventListener('click', function(){
+    //    document.body.style.backgroundColor = 'orange'
+    // })
+    // greenBtn.addEventListener('click', function(){
+    //    document.body.style.backgroundColor = 'green'
+    // })
+
+// as there are only two buttons but when there are more than hundreds of buttons
+// so what we will do 
+// so we will make click handler 
+
+// function clickHandler(color) {
+//        document.body.style.backgroundColor = `${color}`
+    
+// }
+// document.getElementById('orange').onclick = clickHandler('orange')   
+// document.getElementById('green').onclick = clickHandler('green') 
+
+//  here is the problem because teh onclick want a whole function not the execution of the funciton
+// mean we have to give refenece of the function with its lexical socpe not he execution of the fun
+// so we will write a function in the handler ftn (child ftn) than we will give its refenecne to the 
+// onclick 
+
+function clickHandler(color) {
+
+    //    document.body.style.backgroundColor = `${color}`// insted of this we will create child ftn and give return its refenence to the onclick
+    function colorPicker(){
+       document.body.style.backgroundColor = `${color}`
+    }
+    return colorPicker; // here we are returning the reference (ftn definition) of the child ftn with it's lexical scope(access of the parent variables) to the parent ftn(clickHandler)
+}
+document.getElementById('orange').onclick = clickHandler('red')  
+document.getElementById('green').onclick = clickHandler('green')
+
+// this is the practical use of the closures 
+
+</script>
+</html>

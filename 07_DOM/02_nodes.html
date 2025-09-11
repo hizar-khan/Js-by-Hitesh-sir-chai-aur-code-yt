@@ -14,29 +14,33 @@
     </div>
 </body>
 <script>
-   const className = document.getElementsByClassName('day') // select class .parent
-   console.log(className); // it will print what inside the class .parent but in HTMLCollection //HTMLCollection [] but its have problem we will discuss later
-   className[2].style.color = 'red'
-//    for(let i = 0 ; i< className.length; i++){
-//     console.log(className[1]);
-//    }
+   // const className = document.getElementsByClassName('day') // select class .parent
+   // console.log(className); // it will print what inside the class .parent but in HTMLCollection //HTMLCollection [] but its have problem we will discuss later
+   // className[2].style.color = 'red'
+   // for(let i = 0 ; i< className.length; i++){ // the .length is due the HtmlCollection coz its little bit similar to array
+   //  console.log(className[1]);
+   // }
 //    className.forEach(element => {
 //     console.log(element);
 //    }); not working  as htmlCollection is not full array
    
 
    console.log('--------0------------');
-//    const parent = document.querySelector('.parent') // select class .parent
-//    console.log(parent); // it will print what inside the class .parent but in  /// all child 
+   const parent = document.querySelector('.parent') // select class .parent
+   // console.log(parent); // it will print what inside the class .parent but in  /// all child 
+   // parent.style.color= 'yellow' // all the childs will be came yellow
+   // parent[2].style.color= 'green'// error
+console.log('----01----');
+// parent.innerHTML = 'hello' // overrde all childs with the text 'hello'
+   // console.log(parent.innerHTML); // print the child's  as text not only text of the child's but also the whole elements
 
-//    console.log(parent.innerHTML);
-   /*
+   /*output
      <div class="day">Monday</div>
         <div class="day">Tuesday</div>
         <div class="day">Wednesday </div>
         <div class="day">Thursday</div>*/
 
-//    console.log(parent.innerText);
+   // console.log(parent.innerText); // print just text of the child's
    /* 
  Monday
 Tuesday
@@ -60,14 +64,12 @@ Thursday*/
    console.log('---------');
 
     
-   const parent = document.querySelector('.parent') // select class .parent
+   // const parent = document.querySelector('.parent') // select class .parent
 //    console.log(parent); // it will print what inside the class .parent // all the child div's
 //    console.log(parent.children[2]); // it will give us element  at the index 2 as
 //    console.log(parent.children[2].innerHTML); // give the content/text inside the element at the index 2
 
-/*for (let i = 0; i < parent.children.length; i++){ //note only parent does't give
-// the HTMLCollection use .children with parent to 
-// get HTMLCollection which is act like an array
+/*for (let i = 0; i < parent.children.length; i++){ //note only parent does't give the HTMLCollection use .children with parent to  get HTMLCollection which is act like an array
     console.log( parent.children[i].innerHTML);
     parent.children[i].style.color = 'green' 
    parent.children[3].style.color = 'red'
@@ -76,11 +78,15 @@ Thursday*/
 
 // parent.forEach(item => {
 //     console.log(item);
-// }); not working 
+// }); not working  as there is no forEach  in HtmlCollection prototype
 
-//   console.log(parent.children);
+//   console.log(parent.children);// HTMLCollection(4) [div.day, div.day, div.day, div.day]
 
 //   parent.children[1].style.color = 'yellow'
+// but
+//   parent.style.color = 'yellow'//all child's will became yellow
+//   parent[1].style.color = 'yellow'//error
+
 
    /*
    console.log(parent);
@@ -91,25 +97,21 @@ Thursday*/
    console.log(parent.children[2].innerHTML); // give the content/text inside the element at the index 2
    */
 
-// for (let i = 0; i < parent.children.length; i++){ //note only parent does't give
-// the HTMLCollection use .children with parent to 
-// get HTMLCollection which is act like an array
-//     console.log( parent.children[i].innerHTML);
-      //parent.children[1].style.color = 'red'
-//   }
 
-//   parent.children[1].style.color = 'red'
+
+//   parent.children[1].style.color = 'red' // work
+// parent[2].style.color = 'red' // error
 
   // we have other properties not only children
 //   console.log(parent.firstElementChild); // <div class = 'day'> Monday </div>
 //   console.log(parent.firstElementChild.innerText); // Monday
-//   console.log(parent.lastElementChild);
+//   console.log(parent.lastElementChild); // <div class = 'day'> Thursday </div>
 //   parent.lastElementChild.style.color = 'green' // it will color the last child  of the class parent
 
-//   const dayOne = document.querySelector('.day')
+  const dayOne = document.querySelector('.day')
 //   console.log(dayOne); //monday
 //   // how to go from child to parent element
-//   console.log(dayOne.parentElement); // it will give parent and what inside the parent
+  console.log(dayOne.parentElement); // it will give parent and what inside the parent
   
 //  we can move on next element inside children e.g 
 //from one sibling to another sibling
@@ -137,7 +139,10 @@ console.log('NODES:', parent.childNodes); // gives us all child nodes // it will
 //(as someTime we make space so we break lines more than one) so that will not count 
 // comment  will also consider/count as node
 
-/*
+// space btw two element in same line also count but only one time
+
+/*Revision
+
 
 
 */

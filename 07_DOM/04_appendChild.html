@@ -17,8 +17,8 @@
 
 
 
-//     HOw to create new element inside the alredy exixting element
-//     const ul = document.querySelector('ul') // target the parenet element 
+//     HOw to create new element inside the already existing element
+//     const ul = document.querySelector('ul') // target the parent element 
 //   console.log(ul); // let check
 //   const childLi = document.createElement('li') // than create new element
 //   childLi.innerHTML = "REact js" // add content inside that element
@@ -26,9 +26,10 @@
 
 
 // ****** in the above code , we learn how to add new/child element inside the already existing element 
-// ******* now if we want to add more than one , than we will make a ftn , to add new elemnt again and again
+// ******* now if we want to add more than one , than we will make a ftn , to add new element again and again
 
 /*
+
 function newElement (langName){
     // first create element that we want to add 
     const newLi = document.createElement('li')
@@ -46,17 +47,17 @@ newElement("Node Js")
 */
 
 // but but but , the above program have a Problem
-// at this moment inthe html document we have only one element // so by adding new element with help of above ftn/program
-// it travese the whole tree here we have just add one elemnt that is why it done with no-diffuclty but what if 
+// at this moment in the html document we have only one element // so by adding new element with help of above ftn/program
+// it traverse the whole tree here we have just add one element that is why it done with no-difficulty but what if 
 //we have more than one element ,someTime we have hundred and thousand of element ,
-//so to travese them it will became problemetic 
-// becasue we are going to at the end (adding new element at last) for which we are traversing whole tree
+//so to traverse them it will became problematic 
+// because we are going to at the end (adding new element at last) for which we are traversing whole tree
 // so each time the above ftn run, the whole tree will traverse each time , that's not Good Thing, it create issues.
 // the whole traversing is due to the .innerHtml() which override the node ,if we use .createTextNode()
 // which just add text not traverse the whole tree
 
 // for this we will use diffent approach
-function addElementOptmze (langName){
+function addElementOptmze (langName, color){
     const newLi = document.createElement('li')
     // new method -- create new node inside the appendChild()
     // const addText = document.createTextNode(langName) 
@@ -65,21 +66,21 @@ function addElementOptmze (langName){
  // below we directly put inside the parenethesis
  
     newLi.appendChild(document.createTextNode(langName))
-    newLi.style.color = 'red'
-    // in the above line we take the newly created li and appenChild new  textNode in it 
+    newLi.style.color = `${color}`
+    // in the above line we take the newly created li and appenChild new  textNode in it now we want to display it on the webpage
 
      document.querySelector('.language').appendChild(newLi) // this will add new li inside the ul with className .language
     // document.body.appendChild(newLi) // this will add the li in the body not inside the ul
 
-
+console.log(  document.querySelector('.language').appendChild(newLi));
 }
 
- addElementOptmze('React js')
- addElementOptmze('Node Js')
+ addElementOptmze('React js', 'red')
+ addElementOptmze('Node Js', 'green')
 
 
- // here we are not traversing the whole tree and just add new Element 
- // this is becuase of .createTextNode() which not Override the node it just create new node
+ // here we are not traversing the whole tree , just adding new Element 
+ // this is because of .createTextNode() which not Override the node it just create new node
 
 
   
