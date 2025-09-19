@@ -10,6 +10,21 @@
 // global scope are accessible/avalible everyWhere .we can acces it inside and outside the brackets
 //remeber global scope always wiritten outside the brackets  while local scope will always written inside
 //the curly brackets(of function/if/else not of objects brakkets)
+/*
+| Scope    | Created By           | Accessible Outside? | Keywords                |
+| -------- | -------------------- | ------------------- | ----------------------- |
+| Global   | Outside any function | Yes                 | `var`, `let`, `const`   |
+| Function | Function             | No                  | `var` (function-scoped) |
+| Local    | Function             | No                  | `var`, `let`, `const`   |
+| Block    | `{}` (loops, if)     | No                  | `let`, `const` only     |
+
+*/
+
+
+
+
+
+
 /**
 if(true)
 {
